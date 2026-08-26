@@ -79,25 +79,142 @@
     display:flex; flex-direction:column; line-height:1.05;
   }
   .brand small{ font-size:0.6rem; color:var(--gold-dim); letter-spacing:0.18em; font-family:'Inter',sans-serif;}
-  nav ul{
-  list-style:none; margin:0; padding:40px 28px; gap:26px; font-size:1.1rem;
-  display:flex; flex-direction:column;
-  position:fixed; inset:64px 0 0 0; background:var(--noir);
-  transform:translateX(100%); transition:transform .3s ease;
+  /* ---------- navigation drawer ---------- */
+
+nav ul{
+  list-style:none;
+  margin:0;
+  padding:110px 48px 60px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:10px;
+
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+
+  width:min(420px, 88vw);
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(36,25,17,0.98),
+      rgba(14,10,8,0.99)
+    );
+
+  border-left:1px solid var(--line);
+
+  box-shadow:-30px 0 80px rgba(0,0,0,.45);
+
+  transform:translateX(105%);
+  opacity:0;
+
+  transition:
+    transform .45s cubic-bezier(.22,.8,.3,1),
+    opacity .3s ease;
+
+  z-index:100;
 }
-nav ul.open{ transform:translateX(0); }
-  nav a{
-    font-size:1.5rem; text-decoration:none; color:var(--cream-dim);
-    letter-spacing:0.02em; transition:color .2s ease; position:relative;
-  }
-  nav a:hover{color:var(--cream);}
-  .nav-cta{
-    border:1px solid var(--gold-dim); padding:9px 18px; border-radius:2px;
-    font-size:0.82rem; text-decoration:none; color:var(--gold);
-    transition:all .2s ease; white-space:nowrap;
-  }
-  .nav-cta:hover{background:var(--gold); color:var(--noir); border-color:var(--gold);}
-  .nav-toggle{display:block; background:none; border:none; color:var(--cream); font-size:1.5rem; cursor:pointer;}
+
+nav ul.open{
+  transform:translateX(0);
+  opacity:1;
+}
+
+nav li{
+  border-bottom:1px solid rgba(216,170,103,0.10);
+}
+
+nav a{
+  display:block;
+
+  padding:18px 0;
+
+  font-family:'Fraunces', serif;
+  font-size:clamp(1.6rem, 3vw, 2.15rem);
+  font-weight:400;
+
+  text-decoration:none;
+  color:var(--cream-dim);
+
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+nav a:hover{
+  color:var(--gold);
+  transform:translateX(6px);
+}
+
+
+/* hamburger */
+
+.nav-toggle{
+  position:relative;
+  z-index:110;
+
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+
+  background:none;
+  border:none;
+
+  color:var(--cream);
+  font-size:1.55rem;
+  line-height:1;
+
+  cursor:pointer;
+
+  transition:
+    color .2s ease,
+    transform .3s ease;
+}
+
+.nav-toggle:hover{
+  color:var(--gold);
+}
+
+
+/* dark background behind drawer */
+
+.nav-backdrop{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,.58);
+  backdrop-filter:blur(3px);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:
+    opacity .35s ease,
+    visibility .35s ease;
+
+  z-index:80;
+}
+
+.nav-backdrop.open{
+  opacity:1;
+  visibility:visible;
+}
+
+
+/* stop page scrolling while menu is open */
+
+body.menu-open{
+  overflow:hidden;
+}
 
   /* ---------- hero ---------- */
   .hero{
@@ -274,7 +391,15 @@ nav ul.open{ transform:translateX(0); }
       Une Semaine sur Deux
       <small>RESTAURANT · GRENOBLE</small>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">☰</button>
+    <button
+  class="nav-toggle"
+  id="navToggle"
+  aria-label="Ouvrir le menu"
+  aria-expanded="false"
+  aria-controls="navList"
+>
+  ☰
+</button>
     <nav>
       <ul id="navList">
   <li><a href="#histoire">Le Concept</a></li>
@@ -286,7 +411,7 @@ nav ul.open{ transform:translateX(0); }
     </nav>
   </div>
 </header>
-
+<div class="nav-backdrop" id="navBackdrop"></div>
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
@@ -441,11 +566,50 @@ nav ul.open{ transform:translateX(0); }
     header.classList.toggle('scrolled', window.scrollY > 10);
   });
 
-  // mobile nav
-  const toggle = document.getElementById('navToggle');
-  const navList = document.getElementById('navList');
-  toggle.addEventListener('click', () => navList.classList.toggle('open'));
-  navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
+  // navigation drawer
+const toggle = document.getElementById('navToggle');
+const navList = document.getElementById('navList');
+const backdrop = document.getElementById('navBackdrop');
+
+function openMenu(){
+  navList.classList.add('open');
+  backdrop.classList.add('open');
+  document.body.classList.add('menu-open');
+
+  toggle.textContent = '×';
+  toggle.setAttribute('aria-expanded', 'true');
+  toggle.setAttribute('aria-label', 'Fermer le menu');
+}
+
+function closeMenu(){
+  navList.classList.remove('open');
+  backdrop.classList.remove('open');
+  document.body.classList.remove('menu-open');
+
+  toggle.textContent = '☰';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Ouvrir le menu');
+}
+
+toggle.addEventListener('click', () => {
+  if(navList.classList.contains('open')){
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+backdrop.addEventListener('click', closeMenu);
+
+navList.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('keydown', event => {
+  if(event.key === 'Escape'){
+    closeMenu();
+  }
+});
 
   // rhythm strip — alternating weeks motif, tied to the restaurant's name
   const strip = document.getElementById('rhythmStrip');
