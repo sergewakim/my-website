@@ -145,14 +145,23 @@
   .hero-facts div strong{ display:block; font-family:'Fraunces',serif; font-size:1.5rem; color:var(--gold);}
   .hero-facts div span{ font-size:0.78rem; color:var(--cream-dim); letter-spacing:0.02em;}
 
-  /* octopus line art signature */
-  .octopus-wrap{ position:relative; display:flex; justify-content:center; align-items:center; }
-  .octopus-wrap svg{ width:100%; max-width:420px; height:auto; }
-  .octopus-caption{
-    position:absolute; bottom:-6px; left:50%; transform:translateX(-50%);
-    font-family:'Fraunces',serif; font-style:italic; color:var(--gold-dim);
-    font-size:0.85rem; white-space:nowrap;
-  }
+  .hero-image{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-image img{
+  width:100%;
+  max-width:500px;
+  height:600px;
+  object-fit:cover;
+
+  border-radius:8px;
+  border:1px solid var(--line);
+
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
 
   /* ---------- section headers ---------- */
   .section-head{ max-width:640px; margin-bottom:56px; }
@@ -296,25 +305,9 @@
         <div><strong>Lun–Sam</strong><span>midi & soir</span></div>
       </div>
     </div>
-    <div class="octopus-wrap reveal">
-      <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="#c79a5c" stroke-width="1.6" stroke-linecap="round" fill="none">
-          <ellipse cx="200" cy="150" rx="62" ry="54"/>
-          <path d="M155 175 C 130 230, 140 280, 100 330 C 90 345, 95 360, 110 358 C 128 356, 122 335, 138 315"/>
-          <path d="M172 190 C 158 250, 158 300, 128 345 C 118 358, 122 372, 138 370 C 154 368, 150 348, 162 328"/>
-          <path d="M192 198 C 188 260, 195 310, 178 358 C 173 372, 180 384, 195 380 C 208 376, 202 356, 210 335"/>
-          <path d="M212 198 C 218 260, 212 310, 226 358 C 231 372, 224 384, 210 381 C 198 378, 202 356, 196 335" opacity="0.85"/>
-          <path d="M232 190 C 248 250, 246 300, 270 345 C 280 358, 275 372, 259 370 C 245 368, 249 348, 238 328" opacity="0.85"/>
-          <path d="M248 175 C 272 230, 260 280, 296 330 C 306 345, 300 360, 285 358 C 268 356, 274 335, 260 315" opacity="0.85"/>
-          <path d="M158 155 C 130 148, 108 128, 100 100" opacity="0.7"/>
-          <path d="M244 155 C 272 148, 294 128, 302 100" opacity="0.7"/>
-          <circle cx="180" cy="140" r="3" fill="#c79a5c" stroke="none"/>
-          <circle cx="222" cy="140" r="3" fill="#c79a5c" stroke="none"/>
-        </g>
-      </svg>
-      <span class="octopus-caption">Poulpe grillé — la spécialité de la maison</span>
-    </div>
-  </div>
+    <div class="hero-image reveal">
+    <img src="restaurant-interieur.jpg" alt="Salle du restaurant Une Semaine sur Deux à Grenoble">
+</div>
 </section>
 
 <section class="section-pad menu-alt" id="menu">
