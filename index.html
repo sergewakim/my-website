@@ -451,6 +451,67 @@ body.menu-open{
     gap:10px;
   }
 }
+  /* ---------- poulpe ---------- */
+
+.poulpe-section{
+  background:
+    radial-gradient(circle at 18% 50%, rgba(216,170,103,0.08), transparent 42%),
+    var(--noir);
+}
+
+.poulpe-grid{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.poulpe-intro h2{
+  margin-top:10px;
+  font-size:clamp(2.2rem,4vw,3.4rem);
+  line-height:1.05;
+}
+
+.poulpe-mark{
+  margin-top:28px;
+  font-size:3.2rem;
+}
+
+.poulpe-copy{
+  max-width:560px;
+}
+
+.poulpe-copy p{
+  margin:0 0 22px;
+  color:var(--cream-dim);
+  font-size:1.02rem;
+  line-height:1.8;
+}
+
+.poulpe-copy .poulpe-quote{
+  margin-top:34px;
+  padding-left:22px;
+
+  border-left:2px solid var(--gold);
+
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:1.35rem;
+  line-height:1.45;
+
+  color:var(--gold);
+}
+
+@media (max-width:880px){
+  .poulpe-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .poulpe-mark{
+    font-size:2.8rem;
+  }
+}
   /* ---------- about / rhythm story ---------- */
   .about-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start; }
   .about-copy p{ color:var(--cream-dim); line-height:1.8; font-size:1.02rem; margin:0 0 20px; }
@@ -758,7 +819,46 @@ body.menu-open{
 
 </div>
 </section>
+<section class="section-pad poulpe-section" id="poulpe">
+  <div class="wrap">
 
+    <div class="poulpe-grid">
+
+      <div class="poulpe-intro reveal">
+        <div class="eyebrow">Le Poulpe</div>
+
+        <h2>
+          Le plat signature<br>
+          de la maison.
+        </h2>
+
+        <div class="poulpe-mark" aria-hidden="true">🐙</div>
+      </div>
+
+      <div class="poulpe-copy reveal">
+
+        <p>
+          Au fil des cartes, une assiette est devenue une signature :
+          le poulpe.
+        </p>
+
+        <p>
+          Travaillé au rythme des saisons et de l’inspiration du chef,
+          il évolue dans ses accompagnements tout en conservant
+          l’identité qui en a fait l’un des plats emblématiques
+          de la maison.
+        </p>
+
+        <p class="poulpe-quote">
+          Une constante dans une carte qui ne l’est jamais.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 <section class="section-pad" id="histoire">
   <div class="wrap about-grid">
     <div class="reveal">
