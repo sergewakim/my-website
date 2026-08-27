@@ -453,28 +453,74 @@ body.menu-open{
 }
   /* ---------- poulpe ---------- */
 
+/* ---------- poulpe ---------- */
+
 .poulpe-section{
   background:
-    radial-gradient(circle at 18% 50%, rgba(216,170,103,0.08), transparent 42%),
+    radial-gradient(
+      circle at 82% 50%,
+      rgba(216,170,103,0.08),
+      transparent 42%
+    ),
     var(--noir);
 }
 
 .poulpe-grid{
   display:grid;
-  grid-template-columns:0.9fr 1.1fr;
-  gap:80px;
+  grid-template-columns:1.15fr 0.85fr;
+  gap:70px;
   align-items:center;
 }
 
-.poulpe-intro h2{
+/* left side: title + text */
+
+.poulpe-content{
+  padding-left:36px;
+  max-width:620px;
+}
+
+.poulpe-content h2{
   margin-top:10px;
   font-size:clamp(2.2rem,4vw,3.4rem);
   line-height:1.05;
 }
 
-.poulpe-mark{
+.poulpe-copy{
+  max-width:520px;
+  margin-top:30px;
+}
+
+.poulpe-copy p{
+  margin:0 0 18px;
+  color:var(--cream-dim);
+  font-size:1rem;
+  line-height:1.7;
+}
+
+.poulpe-copy .poulpe-quote{
   margin-top:28px;
-  width:140px;
+  padding-left:20px;
+
+  border-left:2px solid var(--gold);
+
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:1.25rem;
+  line-height:1.45;
+
+  color:var(--gold);
+}
+
+
+/* right side: octopus */
+
+.poulpe-mark{
+  width:100%;
+  max-width:420px;
+
+  justify-self:end;
+
+  margin:0;
   color:var(--gold);
   opacity:0.95;
 }
@@ -485,40 +531,25 @@ body.menu-open{
   height:auto;
 }
 
-.poulpe-copy{
-  max-width:560px;
-}
 
-.poulpe-copy p{
-  margin:0 0 22px;
-  color:var(--cream-dim);
-  font-size:1.02rem;
-  line-height:1.8;
-}
-
-.poulpe-copy .poulpe-quote{
-  margin-top:34px;
-  padding-left:22px;
-
-  border-left:2px solid var(--gold);
-
-  font-family:'Fraunces', serif;
-  font-style:italic;
-  font-size:1.35rem;
-  line-height:1.45;
-
-  color:var(--gold);
-}
+/* mobile */
 
 @media (max-width:880px){
+
   .poulpe-grid{
     grid-template-columns:1fr;
-    gap:40px;
+    gap:35px;
+  }
+
+  .poulpe-content{
+    padding-left:0;
   }
 
   .poulpe-mark{
-    width:110px;
-}
+    width:240px;
+    justify-self:center;
+  }
+
 }
   /* ---------- about / rhythm story ---------- */
   .about-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start; }
@@ -832,15 +863,37 @@ body.menu-open{
 
     <div class="poulpe-grid">
 
-      <div class="poulpe-intro reveal">
-        <div class="eyebrow">Le Poulpe</div>
+      <div class="poulpe-content reveal">
 
-        <h2>
-          Le plat signature<br>
-          de la maison.
-        </h2>
+  <div class="eyebrow">Le Poulpe</div>
 
-        <div class="poulpe-mark" aria-hidden="true">
+  <h2>
+    Le plat signature<br>
+    de la maison.
+  </h2>
+
+  <div class="poulpe-copy">
+
+    <p>
+      Au fil des cartes, une assiette est devenue une signature :
+      le poulpe.
+    </p>
+
+    <p>
+      Ses accompagnements changent au gré des saisons et de
+      l’inspiration du chef, mais lui garde toujours sa place à table.
+    </p>
+
+    <p class="poulpe-quote">
+      Une constante dans une carte qui ne l’est jamais.
+    </p>
+
+  </div>
+
+</div>
+
+
+<div class="poulpe-mark reveal" aria-hidden="true">
 
   <svg viewBox="0 0 400 400" fill="none"
        xmlns="http://www.w3.org/2000/svg">
@@ -886,27 +939,6 @@ body.menu-open{
   </svg>
 
 </div>
-      </div>
-
-      <div class="poulpe-copy reveal">
-
-        <p>
-          Au fil des cartes, une assiette est devenue une signature :
-          le poulpe.
-        </p>
-
-        <p>
-          Travaillé au rythme des saisons et de l’inspiration du chef,
-          il évolue dans ses accompagnements tout en conservant
-          l’identité qui en a fait l’un des plats emblématiques
-          de la maison.
-        </p>
-
-        <p class="poulpe-quote">
-          Une constante dans une carte qui ne l’est jamais.
-        </p>
-
-      </div>
 
     </div>
 
