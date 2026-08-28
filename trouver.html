@@ -253,7 +253,30 @@
 
   color:var(--cream);
 }
+.hours-value{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
 
+.hours-value strong{
+  font-weight:500;
+}
+
+.hours-line{
+  display:flex;
+  justify-content:space-between;
+  max-width:230px;
+}
+
+.hours-line span:first-child{
+  color:var(--cream-dim);
+  font-size:0.95rem;
+}
+
+.hours-closed{
+  margin-top:10px;
+}
 .info-row .value a{
   color:var(--cream);
   text-decoration:none;
@@ -460,11 +483,23 @@
 
     <div class="info-row">
       <span class="label">Horaires</span>
-      <span class="value">
-      Lundi – Samedi<br>
-      12h–14h · 19h–21h30<br><br>
-      Dimanche · Fermé
-      </span>
+     <span class="value hours-value">
+  <strong>Lundi – Samedi</strong>
+
+  <span class="hours-line">
+    <span>Midi</span>
+    <span>12h–14h</span>
+  </span>
+
+  <span class="hours-line">
+    <span>Soir</span>
+    <span>19h–21h30</span>
+  </span>
+
+  <span class="hours-closed">
+    Dimanche · Fermé
+  </span>
+</span>
     </div>
 
   </div>
