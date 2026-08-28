@@ -749,9 +749,9 @@ appearance:none;
       <small>RESTAURANT · GRENOBLE</small>
     </a>
    <nav class="main-nav">
-  <a href="carte.html">La Carte</a>
-  <a href="trouver.html">Nous trouver</a>
-  <a href="avis-contact.html">Avis &amp; Contact</a>
+  <a href="carte.html" data-i18n="nav.menu">La Carte</a>
+  <a href="trouver.html" data-i18n="nav.find">Nous trouver</a>
+  <a href="avis-contact.html" data-i18n="nav.reviews">Avis &amp; Contact</a>
 </nav>
     <div class="lang-switcher-wrap">
 
@@ -771,9 +771,14 @@ appearance:none;
   <div class="wrap hero-grid">
     <div>
       <div class="rhythm-strip" id="rhythmStrip" aria-hidden="true"></div>
-      <div class="eyebrow">Cuisine française contemporaine • Grenoble</div>
-      <h1>Pourquoi revenir&nbsp;?<br><em>Parce que la carte ne revient jamais.</em></h1>
-      <p class="hero-lede">
+      <div class="eyebrow" data-i18n="hero.eyebrow">
+      Cuisine française contemporaine • Grenoble
+      </div>
+      <h1 data-i18n-html="hero.title">
+      Pourquoi revenir&nbsp;?<br>
+      <em>Parce que la carte ne revient jamais.</em>
+      </h1>
+      <p class="hero-lede" data-i18n-html="hero.text">
   Une table contemporaine au cœur de Grenoble, où l’on revient moins
   pour retrouver un plat que pour découvrir le suivant.
   <br><br>
@@ -781,8 +786,21 @@ appearance:none;
   une nouvelle histoire à goûter.
 </p>
       <div class="hero-actions">
-        <a class="btn btn-solid" href="https://www.thefork.fr/restaurant/une-semaine-sur-deux-r442641" target="_blank" rel="noopener">Réserver une table</a>
-        <a class="btn btn-ghost" href="carte.html">Voir la carte</a>
+        <a
+        class="btn btn-solid"
+        href="https://www.thefork.fr/restaurant/une-semaine-sur-deux-r442641"
+        target="_blank"
+        rel="noopener"
+        data-i18n="hero.book">
+        Réserver une table
+      </a>
+
+      <a
+        class="btn btn-ghost"
+        href="carte.html"
+        data-i18n="hero.menu">
+        Voir la carte
+      </a>
       </div>
     </div>
     <div class="hero-image reveal">
