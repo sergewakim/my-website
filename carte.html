@@ -423,35 +423,35 @@
   <div class="menu-column">
 
     <div class="menu-column-head">
-      <h3>Entrées</h3>
+      <h3 data-i18n="menu.starters">Entrées</h3>
       <span class="menu-column-price">10 €</span>
     </div>
 
     <div class="menu-dish">
       <div class="menu-dish-top">
-        <span class="menu-dish-name">Saumon Gravlax</span>
+        <span class="menu-dish-name" data-i18n="menu.salmon.name">Saumon Gravlax</span>
       </div>
-      <span class="menu-dish-description">
-        gravlax maison, agrumes
-      </span>
+      <span class="menu-dish-description" data-i18n="menu.salmon.desc">
+  gravlax maison, agrumes
+</span>
     </div>
 
     <div class="menu-dish">
       <div class="menu-dish-top">
-        <span class="menu-dish-name">Foie Gras Mi-Cuit</span>
+        <span class="menu-dish-name" data-i18n="menu.foiegras.name">Foie Gras Mi-Cuit</span>
       </div>
-      <span class="menu-dish-description">
-        chutney de coing, effiloché de bœuf
-      </span>
+      <span class="menu-dish-description" data-i18n="menu.foiegras.desc">
+  chutney de coing, effiloché de bœuf
+</span>
     </div>
 
     <div class="menu-dish">
       <div class="menu-dish-top">
-        <span class="menu-dish-name">Gazpacho</span>
+        <span class="menu-dish-name" data-i18n="menu.gazpacho.name">Gazpacho</span>
       </div>
-      <span class="menu-dish-description">
-        légumes de saison
-      </span>
+      <span class="menu-dish-description" data-i18n="menu.gazpacho.desc">
+  légumes de saison
+</span>
     </div>
 
   </div>
@@ -461,27 +461,27 @@
   <div class="menu-column">
 
     <div class="menu-column-head">
-      <h3>Plats</h3>
+      <h3 data-i18n="menu.mains">Plats</h3>
       <span class="menu-column-price">22 €</span>
     </div>
 
     <div class="menu-dish">
       <div class="menu-dish-top">
-        <span class="menu-dish-name">Poulpe Safrané</span>
+        <span class="menu-dish-name" data-i18n="menu.octopus.name">Poulpe Safrané</span>
         <span class="menu-supplement">+5 €</span>
       </div>
-      <span class="menu-dish-description">
-        poulpe grillé, safran, huile d'olive
-      </span>
+      <span class="menu-dish-description" data-i18n="menu.octopus.desc">
+  poulpe grillé, safran, huile d'olive
+</span>
     </div>
 
     <div class="menu-dish">
       <div class="menu-dish-top">
-        <span class="menu-dish-name">Souris d'Agneau</span>
+        <span class="menu-dish-name" data-i18n="menu.lamb.name">Souris d'Agneau</span>
       </div>
-      <span class="menu-dish-description">
-        cuisson longue, jus corsé
-      </span>
+      <span class="menu-dish-description" data-i18n="menu.lamb.desc">
+  cuisson longue, jus corsé
+</span>
     </div>
 
   </div>
@@ -491,37 +491,41 @@
   <div class="menu-column">
 
     <div class="menu-column-head">
-      <h3>Desserts</h3>
+      <h3 data-i18n="menu.desserts">Desserts</h3>
       <span class="menu-column-price">10 €</span>
     </div>
 
     <div class="menu-dish">
       <div class="menu-dish-top">
-        <span class="menu-dish-name">Dessert Autour du Chocolat</span>
+        <span class="menu-dish-name" data-i18n="menu.chocolate.name">
+  Dessert Autour du Chocolat
+</span>
       </div>
-      <span class="menu-dish-description">
-        déclinaison maison
-      </span>
+      <span class="menu-dish-description" data-i18n="menu.chocolate.desc">
+  déclinaison maison
+</span>
     </div>
 
     <div class="menu-dish">
       <div class="menu-dish-top">
-        <span class="menu-dish-name">
-          Crème Brûlée à la Chartreuse Jaune
-        </span>
+        <span class="menu-dish-name" data-i18n="menu.chartreuse.name">
+  Crème Brûlée à la Chartreuse Jaune
+</span>
       </div>
-      <span class="menu-dish-description">
-        clin d'œil aux Alpes
-      </span>
+      <span class="menu-dish-description" data-i18n="menu.chartreuse.desc">
+  clin d'œil aux Alpes
+</span>
     </div>
 
     <div class="menu-dish">
       <div class="menu-dish-top">
-        <span class="menu-dish-name">La Pomme Bretonne</span>
+        <span class="menu-dish-name" data-i18n="menu.apple.name">
+  La Pomme Bretonne
+</span>
       </div>
-      <span class="menu-dish-description">
-        pâtisserie maison
-      </span>
+      <span class="menu-dish-description" data-i18n="menu.apple.desc">
+  pâtisserie maison
+</span>
     </div>
 
   </div>
@@ -529,8 +533,10 @@
 <div class="menu-formule reveal">
 
   <div class="menu-formule-label">
-    <small>Formule</small>
-    Entrée &nbsp;·&nbsp; Plat &nbsp;·&nbsp; Dessert
+    <small data-i18n="menu.formula">Formule</small>
+    <span data-i18n="menu.formulaText">
+  Entrée &nbsp;·&nbsp; Plat &nbsp;·&nbsp; Dessert
+</span>
   </div>
 
   <div class="menu-formule-price">
@@ -541,7 +547,161 @@
   </div>
 
 </main>
+<script>
 
+const translations = {
+
+  fr: {
+    "nav.menu": "La Carte",
+    "nav.find": "Nous trouver",
+    "nav.reviews": "Avis & Contact",
+
+    "menu.eyebrow": "La Carte",
+    "menu.title": "À découvrir<br>en ce moment.",
+    "menu.intro": "Une carte courte qui évolue tous les quinze jours, au fil des saisons, des arrivages et de l’inspiration du chef.",
+
+    "menu.starters": "Entrées",
+
+    "menu.salmon.name": "Saumon Gravlax",
+    "menu.salmon.desc": "gravlax maison, agrumes",
+
+    "menu.foiegras.name": "Foie Gras Mi-Cuit",
+    "menu.foiegras.desc": "chutney de coing, effiloché de bœuf",
+
+    "menu.gazpacho.name": "Gazpacho",
+    "menu.gazpacho.desc": "légumes de saison",
+
+    "menu.mains": "Plats",
+
+    "menu.octopus.name": "Poulpe Safrané",
+    "menu.octopus.desc": "poulpe grillé, safran, huile d'olive",
+
+    "menu.lamb.name": "Souris d'Agneau",
+    "menu.lamb.desc": "cuisson longue, jus corsé",
+
+    "menu.desserts": "Desserts",
+
+    "menu.chocolate.name": "Dessert Autour du Chocolat",
+    "menu.chocolate.desc": "déclinaison maison",
+
+    "menu.chartreuse.name": "Crème Brûlée à la Chartreuse Jaune",
+    "menu.chartreuse.desc": "clin d'œil aux Alpes",
+
+    "menu.apple.name": "La Pomme Bretonne",
+    "menu.apple.desc": "pâtisserie maison",
+
+    "menu.formula": "Formule",
+    "menu.formulaText": "Entrée · Plat · Dessert"
+  },
+
+
+  en: {
+    "nav.menu": "Menu",
+    "nav.find": "Find us",
+    "nav.reviews": "Reviews & Contact",
+
+    "menu.eyebrow": "The Menu",
+    "menu.title": "On the menu<br>right now.",
+    "menu.intro": "A short menu that changes every two weeks, following the seasons, the latest arrivals and the chef’s inspiration.",
+
+    "menu.starters": "Starters",
+
+    "menu.salmon.name": "Gravlax Salmon",
+    "menu.salmon.desc": "house-cured gravlax, citrus",
+
+    "menu.foiegras.name": "Mi-Cuit Foie Gras",
+    "menu.foiegras.desc": "quince chutney, pulled beef",
+
+    "menu.gazpacho.name": "Gazpacho",
+    "menu.gazpacho.desc": "seasonal vegetables",
+
+    "menu.mains": "Main Courses",
+
+    "menu.octopus.name": "Saffron Octopus",
+    "menu.octopus.desc": "grilled octopus, saffron, olive oil",
+
+    "menu.lamb.name": "Lamb Shank",
+    "menu.lamb.desc": "slow-cooked, rich jus",
+
+    "menu.desserts": "Desserts",
+
+    "menu.chocolate.name": "Chocolate Dessert",
+    "menu.chocolate.desc": "house chocolate creation",
+
+    "menu.chartreuse.name": "Crème Brûlée with Yellow Chartreuse",
+    "menu.chartreuse.desc": "a nod to the Alps",
+
+    "menu.apple.name": "Breton Apple",
+    "menu.apple.desc": "house-made pastry",
+
+    "menu.formula": "Set Menu",
+    "menu.formulaText": "Starter · Main Course · Dessert"
+  }
+
+};
+
+
+function applyLanguage(lang){
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+
+    const key = element.dataset.i18n;
+
+    if(translations[lang][key]){
+      element.textContent = translations[lang][key];
+    }
+
+  });
+
+
+  document.querySelectorAll("[data-i18n-html]").forEach(element => {
+
+    const key = element.dataset.i18nHtml;
+
+    if(translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+
+  });
+
+
+  languageSwitcher.value = lang;
+
+  languageSwitcher.setAttribute(
+    "aria-label",
+    lang === "fr" ? "Choisir la langue" : "Choose language"
+  );
+
+
+  document.title =
+    lang === "fr"
+      ? "La Carte — Une Semaine sur Deux"
+      : "Menu — Une Semaine sur Deux";
+
+
+  localStorage.setItem("siteLanguage", lang);
+
+}
+
+
+const languageSwitcher =
+  document.getElementById("languageSwitcher");
+
+
+const savedLanguage =
+  localStorage.getItem("siteLanguage") || "fr";
+
+
+applyLanguage(savedLanguage);
+
+
+languageSwitcher.addEventListener("change", event => {
+  applyLanguage(event.target.value);
+});
+
+</script>
 </body>
 
 </html>
