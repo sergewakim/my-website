@@ -83,15 +83,48 @@
   /* ---------- main navigation ---------- */
 
 .main-nav{
-  margin-left:auto;
+  margin-left:120px;
+  margin-right:auto;
 
   display:flex;
   align-items:center;
-  justify-content:flex-end;
 
   gap:42px;
 }
+.lang-switcher-wrap{
+  margin-left:24px;
+}
 
+.lang-switcher{
+  padding:7px 10px;
+
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:2px;
+
+  font-family:'Inter', sans-serif;
+  font-size:0.78rem;
+  font-weight:500;
+  letter-spacing:0.06em;
+
+  color:var(--cream-dim);
+
+  cursor:pointer;
+
+  transition:
+    color .25s ease,
+    border-color .25s ease;
+}
+
+.lang-switcher:hover{
+  color:var(--gold);
+  border-color:var(--gold-dim);
+}
+
+.lang-switcher option{
+  background:var(--noir-soft);
+  color:var(--cream);
+}
 .main-nav a{
   position:relative;
 
@@ -559,6 +592,18 @@
   <a href="#visite">Nous trouver</a>
   <a href="#avis">Avis &amp; Contact</a>
 </nav>
+    <div class="lang-switcher-wrap">
+
+  <select
+    id="languageSwitcher"
+    class="lang-switcher"
+    aria-label="Choisir la langue"
+  >
+    <option value="fr" selected>FR</option>
+    <option value="en">EN</option>
+  </select>
+
+</div>
   </div>
 </header>
 <section class="hero" id="top">
