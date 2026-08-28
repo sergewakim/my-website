@@ -6,11 +6,289 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Nous trouver — Une Semaine sur Deux</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root{
+      --noir:#0e0a08;
+      --noir-soft:#18120d;
+      --card:#241911;
+
+      --cream:#f6efe3;
+      --cream-dim:#c7b298;
+
+      --gold:#d8aa67;
+      --gold-dim:#9f7c4d;
+
+      --line:rgba(216,170,103,0.18);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      background:var(--noir);
+      color:var(--cream);
+      font-family:'Inter',sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .wrap{
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 28px;
+    }
+
+    h1,h2,h3{
+      margin:0;
+      font-family:'Fraunces',serif;
+      font-weight:500;
+    }
+
+    .eyebrow{
+      font-family:'Fraunces',serif;
+      font-style:italic;
+      color:var(--gold);
+      font-size:0.95rem;
+    }
+
+
+    /* ---------- header ---------- */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:50;
+
+      background:rgba(22,14,13,0.88);
+      backdrop-filter:blur(10px);
+
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      max-width:1120px;
+      margin:0 auto;
+      padding:16px 28px;
+
+      display:flex;
+      align-items:center;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+
+      font-family:'Fraunces',serif;
+      font-size:1.05rem;
+      line-height:1.05;
+
+      color:var(--cream);
+      text-decoration:none;
+    }
+
+    .brand small{
+      font-family:'Inter',sans-serif;
+      font-size:0.6rem;
+      letter-spacing:0.18em;
+      color:var(--gold-dim);
+    }
+
+
+    /* navigation */
+
+    .main-nav{
+      margin-left:120px;
+      margin-right:auto;
+
+      width:470px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .main-nav a{
+      padding:8px 0;
+
+      font-size:0.95rem;
+      font-weight:500;
+      letter-spacing:0.03em;
+
+      color:var(--cream-dim);
+      text-decoration:none;
+
+      transition:color .25s ease;
+    }
+
+    .main-nav a:hover{
+      color:var(--gold);
+    }
+
+
+    /* language */
+
+    .lang-switcher-wrap{
+      position:relative;
+      margin-left:24px;
+    }
+
+    .lang-switcher-wrap::after{
+      content:"▾";
+
+      position:absolute;
+      right:5px;
+      top:50%;
+
+      transform:translateY(-52%);
+
+      color:var(--cream-dim);
+      font-size:0.7rem;
+
+      pointer-events:none;
+    }
+
+    .lang-switcher{
+      width:48px;
+      padding:7px 15px 7px 8px;
+
+      appearance:none;
+      -webkit-appearance:none;
+
+      background:transparent;
+      border:1px solid var(--line);
+
+      font-family:'Inter',sans-serif;
+      font-size:0.78rem;
+      color:var(--cream-dim);
+
+      cursor:pointer;
+    }
+
+
+    /* ---------- page ---------- */
+
+    .visit-page{
+      padding:150px 0 100px;
+      min-height:100vh;
+    }
+
+    .visit-page-head{
+      max-width:680px;
+      margin-bottom:70px;
+    }
+
+    .visit-page-head h1{
+      margin-top:10px;
+
+      font-size:clamp(2.8rem,6vw,4.5rem);
+      line-height:1;
+    }
+
+    .visit-page-head p{
+      max-width:540px;
+      margin:22px 0 0;
+
+      color:var(--cream-dim);
+      font-size:1rem;
+      line-height:1.7;
+    }
+
+
+    @media (max-width:800px){
+
+      .main-nav{
+        margin-left:auto;
+        width:auto;
+        gap:20px;
+      }
+
+      .main-nav a{
+        font-size:0.78rem;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-  <h1>Nous trouver</h1>
+
+<header>
+
+  <div class="nav-inner">
+
+    <a href="index.html" class="brand">
+      Une Semaine sur Deux
+      <small>RESTAURANT · GRENOBLE</small>
+    </a>
+
+    <nav class="main-nav">
+      <a href="carte.html">La Carte</a>
+      <a href="trouver.html">Nous trouver</a>
+      <a href="avis-contact.html">Avis &amp; Contact</a>
+    </nav>
+
+    <div class="lang-switcher-wrap">
+
+      <select
+        id="languageSwitcher"
+        class="lang-switcher"
+        aria-label="Choisir la langue"
+      >
+        <option value="fr" selected>FR</option>
+        <option value="en">EN</option>
+      </select>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main class="visit-page">
+
+  <div class="wrap">
+
+    <div class="visit-page-head">
+
+      <div class="eyebrow">Nous trouver</div>
+
+      <h1>
+        Au cœur de<br>
+        Championnet.
+      </h1>
+
+      <p>
+        Une Semaine sur Deux vous accueille au cœur de Grenoble,
+        à quelques pas du centre-ville.
+      </p>
+
+    </div>
+
+  </div>
+
+</main>
+
 
 </body>
 
