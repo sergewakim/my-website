@@ -86,17 +86,36 @@
   margin-left:120px;
   margin-right:auto;
 
+  width:520px;
+
   display:flex;
   align-items:center;
-
-  gap:42px;
+  justify-content:space-between;
 }
 .lang-switcher-wrap{
+  position:relative;
   margin-left:24px;
 }
 
+.lang-switcher-wrap::after{
+  content:"▾";
+  position:absolute;
+  right:8px;
+  top:50%;
+  transform:translateY(-52%);
+
+  color:var(--cream-dim);
+  font-size:0.7rem;
+
+  pointer-events:none;
+}
+
 .lang-switcher{
-  padding:7px 10px;
+  width:58px;
+padding:7px 22px 7px 9px;
+
+appearance:none;
+-webkit-appearance:none;
 
   background:transparent;
   border:1px solid var(--line);
@@ -131,7 +150,7 @@
   padding:8px 0;
 
   font-family:'Inter', sans-serif;
-  font-size:0.86rem;
+  font-size:0.95rem;
   font-weight:500;
   letter-spacing:0.03em;
 
