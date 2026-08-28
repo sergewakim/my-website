@@ -333,6 +333,91 @@
 
   color:var(--cream-dim);
 }
+    /* ---------- reviews + contact layout ---------- */
+
+.reviews-layout{
+  display:grid;
+  grid-template-columns:1.35fr 0.65fr;
+  gap:70px;
+  align-items:start;
+}
+
+.reviews-left{
+  min-width:0;
+}
+
+.contact-side{
+  padding-top:0;
+}
+
+.contact-side h2{
+  margin-top:10px;
+
+  font-size:clamp(2rem,3.3vw,2.9rem);
+  line-height:1.08;
+}
+
+.contact-details{
+  margin-top:45px;
+  border-top:1px solid var(--line);
+}
+
+.contact-row{
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.contact-label{
+  font-family:'Inter',sans-serif;
+  font-size:0.72rem;
+  font-weight:500;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+
+  color:var(--gold);
+}
+
+.contact-row a{
+  font-family:'Fraunces',serif;
+  font-size:1.15rem;
+
+  color:var(--cream);
+  text-decoration:none;
+
+  transition:color .25s ease;
+}
+
+.contact-row a:hover{
+  color:var(--gold);
+}
+
+.contact-cta{
+  display:inline-block;
+  margin-top:30px;
+  padding:13px 20px;
+
+  border:1px solid var(--gold-dim);
+
+  font-size:0.78rem;
+  font-weight:500;
+  letter-spacing:0.06em;
+
+  color:var(--cream);
+  text-decoration:none;
+
+  transition:
+    background .25s ease,
+    border-color .25s ease;
+}
+
+.contact-cta:hover{
+  background:rgba(216,170,103,0.08);
+  border-color:var(--gold);
+}
     @media(max-width:800px){
 
       .main-nav{
@@ -347,6 +432,10 @@
       .ratings-grid{
       grid-template-columns:1fr;
       }
+      .reviews-layout{
+  grid-template-columns:1fr;
+  gap:60px;
+}
     }
 
   </style>
@@ -498,8 +587,38 @@
 
 </div>
   </div>
+      <div class="contact-side">
+
+  <div class="eyebrow">Contact</div>
+
+  <h2>
+    Une question ?<br>
+    Écrivez-nous.
+  </h2>
+
+  <div class="contact-details">
+
+    <div class="contact-row">
+      <span class="contact-label">Téléphone</span>
+      <a href="tel:+33476271375">04 76 27 13 75</a>
     </div>
 
+    <div class="contact-row">
+      <span class="contact-label">Email</span>
+      <a href="mailto:contact@unesemainesurdeux.fr">
+        contact@unesemainesurdeux.fr
+      </a>
+    </div>
+
+  </div>
+
+  <a class="contact-cta" href="#">
+    Réserver une table
+  </a>
+
+</div>
+    </div>
+    </div>
 </main>
 
 
