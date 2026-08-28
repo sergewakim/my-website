@@ -277,7 +277,146 @@ appearance:none;
     height:1px; background:linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
     margin:0 auto;
   }
+/* ---------- concept + poulpe ---------- */
 
+.concept-poulpe-section{
+  background:
+    radial-gradient(
+      circle at 82% 48%,
+      rgba(216,170,103,0.07),
+      transparent 38%
+    ),
+    var(--noir);
+}
+
+.concept-poulpe-grid{
+  display:grid;
+  grid-template-columns:1fr 0.9fr;
+  gap:90px;
+  align-items:center;
+}
+
+
+/* ----- concept side ----- */
+
+.concept-side h2{
+  margin-top:10px;
+
+  font-size:clamp(2.2rem, 4vw, 3.3rem);
+  line-height:1.05;
+}
+
+.concept-text{
+  max-width:510px;
+  margin-top:28px;
+}
+
+.concept-text p{
+  margin:0 0 18px;
+
+  color:var(--cream-dim);
+  font-size:1rem;
+  line-height:1.75;
+}
+
+.concept-side .stat-cards{
+  max-width:500px;
+  margin-top:32px;
+}
+
+
+/* ----- poulpe side ----- */
+
+.signature-side{
+  position:relative;
+  padding-left:20px;
+}
+
+.signature-side h3{
+  margin-top:8px;
+
+  font-family:'Fraunces', serif;
+  font-size:clamp(1.8rem, 3vw, 2.6rem);
+  font-weight:500;
+  line-height:1.08;
+
+  color:var(--cream);
+}
+
+.signature-text{
+  max-width:390px;
+  margin:24px 0 0;
+
+  color:var(--cream-dim);
+  font-size:0.98rem;
+  line-height:1.7;
+}
+
+.signature-short{
+  margin:10px 0 0;
+
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  color:var(--gold);
+  font-size:1.05rem;
+}
+
+
+/* octopus */
+
+.concept-octopus{
+  width:100%;
+  max-width:330px;
+
+  margin:20px auto 4px;
+
+  color:var(--gold);
+  opacity:0.9;
+}
+
+.concept-octopus svg{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+
+/* final signature line */
+
+.signature-quote{
+  max-width:390px;
+  margin:8px auto 0;
+  padding-left:18px;
+
+  border-left:2px solid var(--gold);
+
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:1.15rem;
+  line-height:1.45;
+
+  color:var(--gold);
+}
+
+
+/* ----- responsive ----- */
+
+@media (max-width:880px){
+
+  .concept-poulpe-grid{
+    grid-template-columns:1fr;
+    gap:65px;
+  }
+
+  .signature-side{
+    padding-left:0;
+  }
+
+  .concept-octopus{
+    max-width:260px;
+  }
+
+}
   /* ---------- menu ---------- */
   .menu-alt{ background:var(--noir-soft); }
   .menu-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:0 60px; }
@@ -648,16 +787,35 @@ appearance:none;
 </div>
 </div>
 </section>
-<section class="section-pad" id="concept">
-  <div class="wrap about-grid">
+<section class="section-pad concept-poulpe-section" id="concept">
 
-    <div class="reveal">
+  <div class="wrap concept-poulpe-grid">
+
+
+    <!-- LE CONCEPT -->
+    <div class="concept-side reveal">
+
       <div class="eyebrow">Le Concept</div>
 
-      <h2 style="margin-top:10px; font-size:2rem;">
+      <h2>
         Une cuisine qui ne reste<br>
         jamais en place.
       </h2>
+
+      <div class="concept-text">
+
+        <p>
+          Une Semaine sur Deux porte son nom jusque dans l’assiette.
+          Tous les quinze jours, la carte évolue au fil des saisons,
+          des arrivages et des envies du chef.
+        </p>
+
+        <p>
+          Une carte courte, volontairement, pour laisser à chaque
+          assiette le temps, l’attention et la précision qu’elle mérite.
+        </p>
+
+      </div>
 
       <div class="stat-cards">
 
@@ -668,39 +826,91 @@ appearance:none;
 
         <div class="stat-card">
           <strong>Saisons</strong>
-          <span>Produits & arrivages</span>
+          <span>Produits &amp; arrivages</span>
         </div>
 
       </div>
+
     </div>
 
-    <div class="about-copy reveal">
 
-  <p>
-    Une Semaine sur Deux porte son nom jusque dans l’assiette.
-    Ici, la carte n’est pas pensée pour rester : elle évolue régulièrement,
-    au fil des saisons, des arrivages et des envies du chef.
-  </p>
+    <!-- LE POULPE -->
+    <div class="signature-side reveal">
 
-  <p>
-    Tous les quinze jours, une nouvelle sélection prend place à table.
-    Peu de plats, volontairement, pour laisser à chacun le temps,
-    l’attention et la précision qu’il mérite.
-  </p>
+      <div class="eyebrow">Le Poulpe</div>
 
-  <p>
-    L’idée n’est pas de changer pour changer, mais de cuisiner le moment présent.
-    Un produit, une saison, une inspiration peuvent suffire à faire naître
-    la prochaine carte.
-  </p>
-      
-  <p>
-    Alors on ne revient pas forcément pour commander la même chose.
-    On revient pour retrouver une cuisine, une façon de faire —
-    et découvrir ce qui a changé depuis la dernière fois.
-  </p>
+      <h3>
+        Le plat signature<br>
+        de la maison.
+      </h3>
+
+      <p class="signature-text">
+        Au fil des cartes, une assiette est devenue une signature :
+        le poulpe.
+      </p>
+
+      <p class="signature-short">
+        Ses accompagnements changent, lui reste.
+      </p>
+
+
+      <div class="concept-octopus" aria-hidden="true">
+
+        <svg viewBox="0 0 400 400" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+
+          <g
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            fill="none"
+          >
+
+            <ellipse cx="200" cy="150" rx="62" ry="54"/>
+
+            <path d="M155 175 C 130 230, 140 280, 100 330 C 90 345, 95 360, 110 358 C 128 356, 122 335, 138 315"/>
+
+            <path d="M172 190 C 158 250, 158 300, 128 345 C 118 358, 122 372, 138 370 C 154 368, 150 348, 162 328"/>
+
+            <path d="M192 198 C 188 260, 195 310, 178 358 C 173 372, 180 384, 195 380 C 208 376, 202 356, 210 335"/>
+
+            <path d="M212 198 C 218 260, 212 310, 226 358 C 231 372, 224 384, 210 381 C 198 378, 202 356, 196 335"
+                  opacity="0.85"/>
+
+            <path d="M232 190 C 248 250, 246 300, 270 345 C 280 358, 275 372, 259 370 C 245 368, 249 348, 238 328"
+                  opacity="0.85"/>
+
+            <path d="M248 175 C 272 230, 260 280, 296 330 C 306 345, 300 360, 285 358 C 268 356, 274 335, 260 315"
+                  opacity="0.85"/>
+
+            <path d="M158 155 C 130 148, 108 128, 100 100"
+                  opacity="0.7"/>
+
+            <path d="M244 155 C 272 148, 294 128, 302 100"
+                  opacity="0.7"/>
+
+            <circle cx="180" cy="140" r="3"
+                    fill="currentColor" stroke="none"/>
+
+            <circle cx="222" cy="140" r="3"
+                    fill="currentColor" stroke="none"/>
+
+          </g>
+
+        </svg>
+
+      </div>
+
+
+      <p class="signature-quote">
+        Une constante dans une carte qui ne l’est jamais.
+      </p>
+
     </div>
+
+
   </div>
+
 </section>
 <section class="section-pad menu-alt" id="menu">
   <div class="wrap">
