@@ -264,9 +264,10 @@
 }
 
 .hours-line{
-  display:flex;
-  justify-content:space-between;
-  max-width:230px;
+  display:grid;
+  grid-template-columns:55px auto;
+  column-gap:18px;
+  align-items:baseline;
 }
 
 .hours-line span:first-child{
