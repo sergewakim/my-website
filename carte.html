@@ -210,7 +210,137 @@
       color:var(--cream-dim);
       line-height:1.7;
     }
+    .menu-columns{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:0 42px;
+  align-items:start;
+}
 
+.menu-column{
+  min-width:0;
+}
+
+.menu-column-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:15px;
+
+  padding-bottom:14px;
+  margin-bottom:4px;
+
+  border-bottom:1px solid var(--line);
+}
+
+.menu-column-head h3{
+  font-family:'Fraunces', serif;
+  font-size:1.35rem;
+  font-weight:500;
+  color:var(--cream);
+  margin:0;
+}
+
+.menu-column-price{
+  font-family:'Fraunces', serif;
+  font-size:1rem;
+  color:var(--gold);
+  white-space:nowrap;
+}
+
+.menu-dish{
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.menu-dish-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:14px;
+}
+
+.menu-dish-name{
+  font-family:'Fraunces', serif;
+  font-size:1.12rem;
+  color:var(--cream);
+}
+
+.menu-supplement{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:0.9rem;
+  color:var(--gold);
+  white-space:nowrap;
+}
+
+.menu-dish-description{
+  display:block;
+  margin-top:6px;
+
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:0.82rem;
+  line-height:1.5;
+
+  color:var(--gold-dim);
+}
+
+.menu-formule{
+  grid-column:1 / -1;
+  width:100%;
+  
+  margin-top:46px;
+  padding:22px 26px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+
+  border:1px solid var(--gold-dim);
+  background:rgba(216,170,103,0.04);
+}
+
+.menu-formule-label{
+  font-family:'Fraunces', serif;
+  font-size:1.2rem;
+  color:var(--cream);
+}
+
+.menu-formule-label small{
+  display:block;
+  margin-bottom:5px;
+
+  font-family:'Inter', sans-serif;
+  font-size:0.7rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+
+  color:var(--gold);
+}
+
+.menu-formule-price{
+  font-family:'Fraunces', serif;
+  font-size:1.8rem;
+  color:var(--gold);
+  white-space:nowrap;
+}
+
+@media (max-width:880px){
+  .menu-columns{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+}
+
+@media (max-width:600px){
+  .menu-formule{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:10px;
+  }
+}
 
     @media (max-width:800px){
 
