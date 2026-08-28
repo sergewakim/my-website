@@ -209,7 +209,149 @@
       font-size:1rem;
       line-height:1.7;
     }
+/* ---------- visit information ---------- */
 
+.visit-grid{
+  display:grid;
+  grid-template-columns:0.85fr 1.15fr;
+  gap:70px;
+  align-items:stretch;
+}
+
+
+/* left side */
+
+.visit-info{
+  border-top:1px solid var(--line);
+}
+
+.info-row{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:25px;
+
+  padding:24px 0;
+
+  border-bottom:1px solid var(--line);
+}
+
+.info-row .label{
+  font-family:'Inter',sans-serif;
+  font-size:0.7rem;
+  font-weight:500;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+
+  color:var(--gold);
+}
+
+.info-row .value{
+  font-family:'Fraunces',serif;
+  font-size:1.08rem;
+  line-height:1.55;
+
+  color:var(--cream);
+}
+
+.info-row .value a{
+  color:var(--cream);
+  text-decoration:none;
+
+  transition:color .25s ease;
+}
+
+.info-row .value a:hover{
+  color:var(--gold);
+}
+
+
+/* right side */
+
+.location-card{
+  min-height:420px;
+
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+
+  border:1px solid var(--line);
+
+  background:var(--noir-soft);
+}
+
+.location-visual{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:420px;
+
+  border-right:1px solid var(--line);
+
+  background:
+    linear-gradient(rgba(216,170,103,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(216,170,103,0.05) 1px, transparent 1px);
+
+  background-size:40px 40px;
+}
+
+.location-pin{
+  width:68px;
+  height:68px;
+}
+
+.location-pin svg{
+  width:100%;
+  height:100%;
+}
+
+.location-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  padding:45px;
+}
+
+.location-content h2{
+  margin-top:10px;
+
+  font-size:2rem;
+  line-height:1.1;
+}
+
+.location-content p{
+  margin:18px 0 28px;
+
+  color:var(--cream-dim);
+  font-size:0.92rem;
+  line-height:1.65;
+}
+
+.directions-btn{
+  align-self:flex-start;
+
+  padding:12px 18px;
+
+  border:1px solid var(--gold-dim);
+
+  font-size:0.78rem;
+  font-weight:500;
+  letter-spacing:0.06em;
+
+  color:var(--cream);
+  text-decoration:none;
+
+  transition:
+    background .25s ease,
+    border-color .25s ease;
+}
+
+.directions-btn:hover{
+  background:rgba(216,170,103,0.08);
+  border-color:var(--gold);
+}
 
     @media (max-width:800px){
 
@@ -222,7 +364,20 @@
       .main-nav a{
         font-size:0.78rem;
       }
+.visit-grid{
+  grid-template-columns:1fr;
+  gap:45px;
+}
 
+.location-card{
+  grid-template-columns:1fr;
+}
+
+.location-visual{
+  min-height:260px;
+  border-right:0;
+  border-bottom:1px solid var(--line);
+}
     }
 
   </style>
@@ -284,7 +439,96 @@
       </p>
 
     </div>
+<div class="visit-grid">
 
+  <div class="visit-info">
+
+    <div class="info-row">
+      <span class="label">Adresse</span>
+      <span class="value">
+        4 Place Championnet<br>
+        38000 Grenoble
+      </span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">Téléphone</span>
+      <span class="value">
+        <a href="tel:+33476271375">04 76 27 13 75</a>
+      </span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">Horaires</span>
+      <span class="value">
+        Lun–Sam · 12h–14h<br>
+        19h–21h30<br>
+        Fermé le dimanche
+      </span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">Formule</span>
+      <span class="value">
+        Entrée · Plat · Dessert<br>
+        39 €
+      </span>
+    </div>
+
+  </div>
+
+
+  <div class="location-card">
+
+    <div class="location-visual">
+
+      <div class="location-pin">
+
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 22s7-7.58 7-13a7 7 0 10-14 0c0 5.42 7 13 7 13z"
+            fill="#5d3a24"
+            stroke="#d8aa67"
+            stroke-width="1.2"
+          />
+
+          <circle
+            cx="12"
+            cy="9"
+            r="2.6"
+            fill="#f6efe3"
+          />
+        </svg>
+
+      </div>
+
+    </div>
+
+    <div class="location-content">
+
+      <div class="eyebrow">Grenoble</div>
+
+      <h2>4 Place Championnet</h2>
+
+      <p>
+        En plein cœur du quartier Championnet,
+        à quelques minutes du centre-ville.
+      </p>
+
+      <a
+        class="directions-btn"
+        href="https://www.google.com/maps/search/?api=1&query=4+Place+Championnet+38000+Grenoble"
+        target="_blank"
+        rel="noopener"
+      >
+        Voir l’itinéraire
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
   </div>
 
 </main>
