@@ -348,8 +348,14 @@
 }
 
 .contact-side{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:70px;
+  align-items:start;
+
   margin-top:70px;
   padding-top:55px;
+
   border-top:1px solid var(--line);
 }
 
@@ -364,7 +370,7 @@
   display:grid;
   grid-template-columns:1fr 1fr;
 
-  margin-top:45px;
+  margin-top:0;
   border-top:1px solid var(--line);
 }
     
@@ -407,6 +413,8 @@
 }
 
 .contact-cta{
+  grid-column:2;
+  justify-self:start;
   display:inline-block;
   margin-top:30px;
   padding:13px 20px;
@@ -555,14 +563,14 @@
 </div>
   </div>
       <div class="contact-side">
-
+      <div class="contact-head">
   <div class="eyebrow">Contact</div>
 
   <h2>
     Une question ?<br>
     Écrivez-nous.
   </h2>
-
+  </div>
   <div class="contact-details">
 
     <div class="contact-row">
