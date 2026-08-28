@@ -816,44 +816,46 @@ appearance:none;
     <!-- LE CONCEPT -->
     <div class="concept-side reveal">
 
-      <div class="eyebrow">Le Concept</div>
+      <div class="eyebrow" data-i18n="concept.eyebrow">
+  Le Concept
+</div>
 
-      <h2>
-        Une cuisine qui ne reste<br>
-        jamais en place.
-      </h2>
+      <h2 data-i18n-html="concept.title">
+  Une cuisine qui ne reste<br>
+  jamais en place.
+</h2>
 
       <div class="concept-text">
 
-        <p>
-          Chez Une Semaine sur Deux, la carte suit le rythme des saisons
-          plutôt que celui des habitudes. Tous les quinze jours, le chef
-          imagine une nouvelle sélection à partir des produits du moment,
-          des arrivages et de son inspiration.
-        </p>
+        <p data-i18n="concept.text1">
+  Chez Une Semaine sur Deux, la carte suit le rythme des saisons
+  plutôt que celui des habitudes. Tous les quinze jours, le chef
+  imagine une nouvelle sélection à partir des produits du moment,
+  des arrivages et de son inspiration.
+</p>
 
-        <p>
-          Une carte courte, travaillée avec précision, qui met le produit
-          au centre. Une cuisine vivante, locale autant que possible,
-          pensée pour donner envie de revenir — sans jamais savoir
-          exactement ce que l’on retrouvera à table.
-        </p>
+        <p data-i18n="concept.text2">
+  Une carte courte, travaillée avec précision, qui met le produit
+  au centre. Une cuisine vivante, locale autant que possible,
+  pensée pour donner envie de revenir — sans jamais savoir
+  exactement ce que l’on retrouvera à table.
+</p>
 
       </div>
 
       <div class="stat-cards">
 
         <div class="stat-card">
-          <span>Chaque</span>
-          <strong>15 jours</strong>
-          <span>Une nouvelle carte</span>
-        </div>
+  <span data-i18n="concept.card1.top">Chaque</span>
+  <strong data-i18n="concept.card1.value">15 jours</strong>
+  <span data-i18n="concept.card1.bottom">Une nouvelle carte</span>
+</div>
 
-        <div class="stat-card">
-          <span>Au fil des</span>
-          <strong>Saisons</strong>
-          <span>Produits &amp; arrivages</span>
-        </div>
+<div class="stat-card">
+  <span data-i18n="concept.card2.top">Au fil des</span>
+  <strong data-i18n="concept.card2.value">Saisons</strong>
+  <span data-i18n="concept.card2.bottom">Produits &amp; arrivages</span>
+</div>
 
       </div>
 
@@ -863,21 +865,23 @@ appearance:none;
     <!-- LE POULPE -->
     <div class="signature-side reveal">
 
-      <div class="eyebrow">Le Poulpe</div>
+      <div class="eyebrow" data-i18n="poulpe.eyebrow">
+  Le Poulpe
+</div>
 
-      <h3>
-        Le plat signature<br>
-        de la maison.
-      </h3>
+      <h3 data-i18n-html="poulpe.title">
+  Le plat signature<br>
+  de la maison.
+</h3>
 
-      <p class="signature-text">
-        Au fil des cartes, une assiette est devenue une signature :
-        le poulpe.
-      </p>
+      <p class="signature-text" data-i18n="poulpe.text">
+  Au fil des cartes, une assiette est devenue une signature :
+  le poulpe.
+</p>
 
-      <p class="signature-short">
-        Ses accompagnements changent, lui reste.
-      </p>
+      <p class="signature-short" data-i18n="poulpe.short">
+  Ses accompagnements changent, lui reste.
+</p>
 
 
       <div class="concept-octopus" aria-hidden="true">
@@ -928,9 +932,9 @@ appearance:none;
       </div>
 
 
-      <p class="signature-quote">
-        Une constante dans une carte qui ne l’est jamais.
-      </p>
+      <p class="signature-quote" data-i18n="poulpe.quote">
+  Une constante dans une carte qui ne l’est jamais.
+</p>
 
     </div>
 
@@ -950,7 +954,13 @@ appearance:none;
       </div>
       <div class="footer-note">© <span id="year"></span> Une Semaine sur Deux — 4 Place Championnet, 38000 Grenoble</div>
     </div>
-    <a class="btn btn-solid" href="https://www.thefork.fr/restaurant/une-semaine-sur-deux-r442641" target="_blank" rel="noopener">Réserver une table</a>
+    <a class="btn btn-solid"
+   href="https://www.thefork.fr/restaurant/une-semaine-sur-deux-r442641"
+   target="_blank"
+   rel="noopener"
+   data-i18n="footer.book">
+  Réserver une table
+</a>
   </div>
 </footer>
 
@@ -978,6 +988,111 @@ appearance:none;
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   }, {threshold:0.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // ---------- language switcher ----------
+
+const translations = {
+  fr: {
+    "nav.menu": "La Carte",
+    "nav.find": "Nous trouver",
+    "nav.reviews": "Avis & Contact",
+
+    "hero.eyebrow": "Cuisine française contemporaine • Grenoble",
+    "hero.title": "Pourquoi revenir&nbsp;?<br><em>Parce que la carte ne revient jamais.</em>",
+    "hero.text": "Une table contemporaine au cœur de Grenoble, où l’on revient moins pour retrouver un plat que pour découvrir le suivant.<br><br>Une cuisine de saison, une carte courte, et à chaque visite, une nouvelle histoire à goûter.",
+    "hero.book": "Réserver une table",
+    "hero.menu": "Voir la carte",
+
+    "concept.eyebrow": "Le Concept",
+    "concept.title": "Une cuisine qui ne reste<br>jamais en place.",
+    "concept.text1": "Chez Une Semaine sur Deux, la carte suit le rythme des saisons plutôt que celui des habitudes. Tous les quinze jours, le chef imagine une nouvelle sélection à partir des produits du moment, des arrivages et de son inspiration.",
+    "concept.text2": "Une carte courte, travaillée avec précision, qui met le produit au centre. Une cuisine vivante, locale autant que possible, pensée pour donner envie de revenir — sans jamais savoir exactement ce que l’on retrouvera à table.",
+    "concept.card1.top": "Chaque",
+    "concept.card1.value": "15 jours",
+    "concept.card1.bottom": "Une nouvelle carte",
+    "concept.card2.top": "Au fil des",
+    "concept.card2.value": "Saisons",
+    "concept.card2.bottom": "Produits & arrivages",
+
+    "poulpe.eyebrow": "Le Poulpe",
+    "poulpe.title": "Le plat signature<br>de la maison.",
+    "poulpe.text": "Au fil des cartes, une assiette est devenue une signature : le poulpe.",
+    "poulpe.short": "Ses accompagnements changent, lui reste.",
+    "poulpe.quote": "Une constante dans une carte qui ne l’est jamais.",
+
+    "footer.book": "Réserver une table"
+  },
+
+  en: {
+    "nav.menu": "Menu",
+    "nav.find": "Find us",
+    "nav.reviews": "Reviews & Contact",
+
+    "hero.eyebrow": "Contemporary French cuisine • Grenoble",
+    "hero.title": "Why come back?<br><em>Because the menu never does.</em>",
+    "hero.text": "A contemporary table in the heart of Grenoble, where you come back less to find the same dish than to discover the next one.<br><br>Seasonal cuisine, a short menu, and with every visit, a new story to taste.",
+    "hero.book": "Book a table",
+    "hero.menu": "View the menu",
+
+    "concept.eyebrow": "The Concept",
+    "concept.title": "Cuisine that never<br>stands still.",
+    "concept.text1": "At Une Semaine sur Deux, the menu follows the rhythm of the seasons rather than habit. Every two weeks, the chef creates a new selection inspired by the produce of the moment, the latest arrivals and his inspiration.",
+    "concept.text2": "A short menu, crafted with precision, with the ingredient at its heart. Lively cuisine, locally sourced whenever possible, designed to make you want to return — without ever knowing exactly what you will find on the table.",
+    "concept.card1.top": "Every",
+    "concept.card1.value": "2 weeks",
+    "concept.card1.bottom": "A new menu",
+    "concept.card2.top": "With the",
+    "concept.card2.value": "Seasons",
+    "concept.card2.bottom": "Produce & arrivals",
+
+    "poulpe.eyebrow": "The Octopus",
+    "poulpe.title": "The house<br>signature dish.",
+    "poulpe.text": "Across changing menus, one plate has become a signature: the octopus.",
+    "poulpe.short": "Its accompaniments change. It stays.",
+    "poulpe.quote": "A constant in a menu that never is.",
+
+    "footer.book": "Book a table"
+  }
+};
+
+
+function applyLanguage(lang){
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+
+    if(translations[lang][key]){
+      element.textContent = translations[lang][key];
+    }
+  });
+
+
+  document.querySelectorAll("[data-i18n-html]").forEach(element => {
+    const key = element.dataset.i18nHtml;
+
+    if(translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+  });
+
+  languageSwitcher.value = lang;
+
+  localStorage.setItem("siteLanguage", lang);
+}
+
+
+const languageSwitcher = document.getElementById("languageSwitcher");
+
+const savedLanguage =
+  localStorage.getItem("siteLanguage") || "fr";
+
+applyLanguage(savedLanguage);
+
+
+languageSwitcher.addEventListener("change", event => {
+  applyLanguage(event.target.value);
+});
 </script>
 
 </body>
