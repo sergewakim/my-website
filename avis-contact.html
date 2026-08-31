@@ -471,10 +471,10 @@
     </a>
 
     <nav class="main-nav">
-      <a href="carte.html">La Carte</a>
-      <a href="trouver.html">Nous trouver</a>
-      <a href="avis-contact.html">Avis &amp; Contact</a>
-    </nav>
+  <a href="carte.html" data-i18n="nav.menu">La Carte</a>
+  <a href="trouver.html" data-i18n="nav.find">Nous trouver</a>
+  <a href="avis-contact.html" data-i18n="nav.reviews">Avis &amp; Contact</a>
+</nav>
 
     <div class="lang-switcher-wrap">
 
@@ -504,16 +504,18 @@
     
         <div class="reviews-page-head">
 
-          <div class="eyebrow">Avis</div>
+          <div class="eyebrow" data-i18n="reviews.eyebrow">
+  Avis
+</div>
 
-      <h1>
-        Ils en parlent<br>
-        mieux que nous.
-      </h1>
+<h1 data-i18n-html="reviews.title">
+  Ils en parlent<br>
+  mieux que nous.
+</h1>
 
-      <p>
-        Quelques mots de ceux qui sont déjà passés à table.
-      </p>
+<p data-i18n="reviews.intro">
+  Quelques mots de ceux qui sont déjà passés à table.
+</p>
 
     </div>
 <div class="ratings-grid">
@@ -531,9 +533,9 @@
       ★ ★ ★ ★ ★
     </div>
 
-    <div class="rating-meta">
-      1 352 avis
-    </div>
+   <div class="rating-meta" data-i18n="reviews.googleCount">
+  1 352 avis
+</div>
 
   </div>
 
@@ -547,39 +549,46 @@
       <span>/ 10</span>
     </div>
 
-    <div class="rating-meta">
-      Note des clients
-    </div>
+    <div class="rating-meta" data-i18n="reviews.theforkNote">
+  Note des clients
+</div>
 
   </div>
 
 </div>
-    
-  </article>
 
 </div>
-  </div>
       <div class="contact-side">
       <div class="contact-head">
-  <div class="eyebrow">Contact</div>
+  <div class="eyebrow" data-i18n="contact.eyebrow">
+  Contact
+</div>
 
-  <h2>
-    Une question ?<br>
-    Écrivez-nous.
-  </h2>
-  <a class="contact-cta" href="#">
-    Réserver une table
-  </a>
+  <h2 data-i18n-html="contact.title">
+  Une question ?<br>
+  Écrivez-nous.
+</h2>
+  <a
+  class="contact-cta"
+  href="#"
+  data-i18n="contact.book"
+>
+  Réserver une table
+</a>
   </div>
   <div class="contact-details">
 
     <div class="contact-row">
-      <span class="contact-label">Téléphone</span>
+      <span class="contact-label" data-i18n="contact.phone">
+  Téléphone
+</span>
       <a href="tel:+33476271375">04 76 27 13 75</a>
     </div>
 
     <div class="contact-row">
-      <span class="contact-label">Email</span>
+      <span class="contact-label" data-i18n="contact.email">
+  Email
+</span>
       <a href="mailto:contact@unesemainesurdeux.fr">
         contact@unesemainesurdeux.fr
       </a>
@@ -591,7 +600,102 @@
     </div>
     </div>
 </main>
+<script>
 
+const translations = {
+
+  fr: {
+    "nav.menu": "La Carte",
+    "nav.find": "Nous trouver",
+    "nav.reviews": "Avis & Contact",
+
+    "reviews.eyebrow": "Avis",
+    "reviews.title": "Ils en parlent<br>mieux que nous.",
+    "reviews.intro": "Quelques mots de ceux qui sont déjà passés à table.",
+    "reviews.googleCount": "1 352 avis",
+    "reviews.theforkNote": "Note des clients",
+
+    "contact.eyebrow": "Contact",
+    "contact.title": "Une question ?<br>Écrivez-nous.",
+    "contact.book": "Réserver une table",
+    "contact.phone": "Téléphone",
+    "contact.email": "Email"
+  },
+
+  en: {
+    "nav.menu": "Menu",
+    "nav.find": "Find us",
+    "nav.reviews": "Reviews & Contact",
+
+    "reviews.eyebrow": "Reviews",
+    "reviews.title": "They say it<br>better than we do.",
+    "reviews.intro": "A few words from guests who have already joined us at the table.",
+    "reviews.googleCount": "1,352 reviews",
+    "reviews.theforkNote": "Guest rating",
+
+    "contact.eyebrow": "Contact",
+    "contact.title": "Have a question?<br>Get in touch.",
+    "contact.book": "Book a table",
+    "contact.phone": "Phone",
+    "contact.email": "Email"
+  }
+
+};
+
+
+function applyLanguage(lang){
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+
+    const key = element.dataset.i18n;
+
+    if(translations[lang][key]){
+      element.textContent = translations[lang][key];
+    }
+
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach(element => {
+
+    const key = element.dataset.i18nHtml;
+
+    if(translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+
+  });
+
+  languageSwitcher.value = lang;
+
+  languageSwitcher.setAttribute(
+    "aria-label",
+    lang === "fr" ? "Choisir la langue" : "Choose language"
+  );
+
+  document.title =
+    lang === "fr"
+      ? "Avis & Contact — Une Semaine sur Deux"
+      : "Reviews & Contact — Une Semaine sur Deux";
+
+  localStorage.setItem("siteLanguage", lang);
+}
+
+
+const languageSwitcher =
+  document.getElementById("languageSwitcher");
+
+const savedLanguage =
+  localStorage.getItem("siteLanguage") || "fr";
+
+applyLanguage(savedLanguage);
+
+languageSwitcher.addEventListener("change", event => {
+  applyLanguage(event.target.value);
+});
+
+</script>
 
 </body>
 
