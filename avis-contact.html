@@ -443,25 +443,45 @@
   background:rgba(216,170,103,0.08);
   border-color:var(--gold);
 }
-    @media(max-width:800px){
+    @media(max-width:880px){
 
-      .main-nav{
-        margin-left:auto;
-        width:auto;
-        gap:20px;
-      }
+  .nav-inner{
+    flex-wrap:wrap;
+    padding:12px 20px 10px;
+  }
 
-      .main-nav a{
-        font-size:0.78rem;
-      }
-      .ratings-grid{
-      grid-template-columns:1fr;
-      }
-      .reviews-layout{
-  grid-template-columns:1fr;
-  gap:60px;
+  .brand{
+    flex:1 1 auto;
+  }
+
+  .lang-switcher-wrap{
+    margin-left:auto;
+  }
+
+  .main-nav{
+    order:3;
+    width:100%;
+    margin:10px 0 0;
+    gap:12px;
+    justify-content:space-between;
+  }
+
+  .main-nav a{
+    font-size:0.78rem;
+    padding:6px 0;
+    white-space:nowrap;
+  }
+
+  .ratings-grid{
+    grid-template-columns:1fr;
+  }
+
+  .reviews-layout{
+    grid-template-columns:1fr;
+    gap:60px;
+  }
+
 }
-    }
 
   </style>
 
