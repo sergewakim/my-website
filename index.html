@@ -258,14 +258,33 @@ appearance:none;
   transform-origin:left;
 }
 
-@media (max-width:700px){
+@media (max-width:880px){
+
+  .nav-inner{
+    flex-wrap:wrap;
+    padding:12px 20px 10px;
+  }
+
+  .brand{
+    flex:1 1 auto;
+  }
+
+  .lang-switcher-wrap{
+    margin-left:auto;
+  }
 
   .main-nav{
-    gap:16px;
+    order:3;
+    width:100%;
+    margin:10px 0 0;
+    gap:12px;
+    justify-content:space-between;
   }
 
   .main-nav a{
-    font-size:0.72rem;
+    font-size:0.78rem;
+    padding:6px 0;
+    white-space:nowrap;
   }
 
 }
