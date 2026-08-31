@@ -417,10 +417,10 @@
     </a>
 
     <nav class="main-nav">
-      <a href="carte.html">La Carte</a>
-      <a href="trouver.html">Nous trouver</a>
-      <a href="avis-contact.html">Avis &amp; Contact</a>
-    </nav>
+  <a href="carte.html" data-i18n="nav.menu">La Carte</a>
+  <a href="trouver.html" data-i18n="nav.find">Nous trouver</a>
+  <a href="avis-contact.html" data-i18n="nav.reviews">Avis &amp; Contact</a>
+</nav>
 
     <div class="lang-switcher-wrap">
 
@@ -448,24 +448,24 @@
   <div class="visit-left">
     <div class="visit-page-head">
 
-      <div class="eyebrow">Nous trouver</div>
+      <div class="eyebrow" data-i18n="visit.eyebrow">
+  Nous trouver
+</div>
 
-      <h1>
-        Au cœur de<br>
-        Championnet.
-      </h1>
+<h1 data-i18n-html="visit.title">
+  Au cœur de<br>
+  Championnet.
+</h1>
 
-      <p>
-        Une Semaine sur Deux vous accueille au cœur de Grenoble,
-        à quelques pas du centre-ville.
-      </p>
-
-    </div>
+<p data-i18n="visit.intro">
+  Une Semaine sur Deux vous accueille au cœur de Grenoble,
+  à quelques pas du centre-ville.
+</p>
 
   <div class="visit-info">
 
     <div class="info-row">
-      <span class="label">Adresse</span>
+      <span class="label" data-i18n="visit.address">Adresse</span>
       <span class="value">
         4 Place Championnet<br>
         38000 Grenoble
@@ -473,30 +473,30 @@
     </div>
 
     <div class="info-row">
-      <span class="label">Téléphone</span>
+      <span class="label" data-i18n="visit.phone">Téléphone</span>
       <span class="value">
         <a href="tel:+33476271375">04 76 27 13 75</a>
       </span>
     </div>
 
     <div class="info-row">
-      <span class="label">Horaires</span>
+      <span class="label" data-i18n="visit.hours">Horaires</span>
      <span class="value hours-value">
-  <strong>Lundi – Samedi</strong>
+  <strong data-i18n="visit.days">Lundi – Samedi</strong>
 
   <span class="hours-line">
-    <span>Midi</span>
+    <span data-i18n="visit.lunch">Midi</span>
     <span>12h–14h</span>
   </span>
 
   <span class="hours-line">
-    <span>Soir</span>
+    <span data-i18n="visit.dinner">Soir</span>
     <span>19h–21h30</span>
   </span>
 
-  <span class="hours-closed">
-    Dimanche · Fermé
-  </span>
+  <span class="hours-closed" data-i18n="visit.closed">
+  Dimanche · Fermé
+</span>
 </span>
     </div>
 
@@ -521,21 +521,25 @@
 
       <div class="eyebrow">Grenoble</div>
 
-      <h2>Quartier Championnet</h2>
+      <h2 data-i18n="visit.locationTitle">
+  Quartier Championnet
+</h2>
 
-      <p>
-        En plein cœur du quartier Championnet,
-        à quelques minutes du centre-ville.
-      </p>
+      <p data-i18n="visit.locationText">
+  En plein cœur du quartier Championnet,
+  à quelques minutes du centre-ville.
+</p>
 
       <a
         class="directions-btn"
         href="https://www.google.com/maps/search/?api=1&query=4+Place+Championnet+38000+Grenoble"
         target="_blank"
         rel="noopener"
-      >
-        Voir l’itinéraire
-      </a>
+      
+          data-i18n="visit.directions"
+        >
+          Voir l’itinéraire
+        </a>
 
     </div>
 
@@ -545,7 +549,123 @@
   </div>
 
 </main>
+<script>
 
+const translations = {
+
+  fr: {
+    "nav.menu": "La Carte",
+    "nav.find": "Nous trouver",
+    "nav.reviews": "Avis & Contact",
+
+    "visit.eyebrow": "Nous trouver",
+    "visit.title": "Au cœur de<br>Championnet.",
+    "visit.intro": "Une Semaine sur Deux vous accueille au cœur de Grenoble, à quelques pas du centre-ville.",
+
+    "visit.address": "Adresse",
+    "visit.phone": "Téléphone",
+    "visit.hours": "Horaires",
+
+    "visit.days": "Lundi – Samedi",
+    "visit.lunch": "Midi",
+    "visit.dinner": "Soir",
+    "visit.closed": "Dimanche · Fermé",
+
+    "visit.locationTitle": "Quartier Championnet",
+    "visit.locationText": "En plein cœur du quartier Championnet, à quelques minutes du centre-ville.",
+    "visit.directions": "Voir l’itinéraire"
+  },
+
+
+  en: {
+    "nav.menu": "Menu",
+    "nav.find": "Find us",
+    "nav.reviews": "Reviews & Contact",
+
+    "visit.eyebrow": "Find us",
+    "visit.title": "In the heart of<br>Championnet.",
+    "visit.intro": "Une Semaine sur Deux welcomes you in the heart of Grenoble, just a few minutes from the city centre.",
+
+    "visit.address": "Address",
+    "visit.phone": "Phone",
+    "visit.hours": "Opening hours",
+
+    "visit.days": "Monday – Saturday",
+    "visit.lunch": "Lunch",
+    "visit.dinner": "Dinner",
+    "visit.closed": "Sunday · Closed",
+
+    "visit.locationTitle": "Championnet district",
+    "visit.locationText": "In the heart of the Championnet district, just a few minutes from Grenoble city centre.",
+    "visit.directions": "Get directions"
+  }
+
+};
+
+
+function applyLanguage(lang){
+
+  document.documentElement.lang = lang;
+
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+
+    const key = element.dataset.i18n;
+
+    if(translations[lang][key]){
+      element.textContent = translations[lang][key];
+    }
+
+  });
+
+
+  document.querySelectorAll("[data-i18n-html]").forEach(element => {
+
+    const key = element.dataset.i18nHtml;
+
+    if(translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+
+  });
+
+
+  languageSwitcher.value = lang;
+
+
+  languageSwitcher.setAttribute(
+    "aria-label",
+    lang === "fr" ? "Choisir la langue" : "Choose language"
+  );
+
+
+  document.title =
+    lang === "fr"
+      ? "Nous trouver — Une Semaine sur Deux"
+      : "Find us — Une Semaine sur Deux";
+
+
+  localStorage.setItem("siteLanguage", lang);
+
+}
+
+
+const languageSwitcher =
+  document.getElementById("languageSwitcher");
+
+
+const savedLanguage =
+  localStorage.getItem("siteLanguage") || "fr";
+
+
+applyLanguage(savedLanguage);
+
+
+languageSwitcher.addEventListener("change", event => {
+  applyLanguage(event.target.value);
+});
+
+</script>
 
 </body>
 
