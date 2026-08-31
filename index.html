@@ -13,6 +13,68 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="https://sergewakim.github.io/my-website/restaurant-interieur.jpg">
 <meta property="og:image:alt" content="Salle du restaurant Une Semaine sur Deux à Grenoble">
+<!-- Restaurant Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Une Semaine sur Deux",
+  "description": "Restaurant à Grenoble proposant une cuisine française contemporaine, des produits de saison et son poulpe signature.",
+  "image": "https://sergewakim.github.io/my-website/restaurant-interieur.jpg",
+  "telephone": "+33476271375",
+  "email": "restaurant1sur2@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4 Place Championnet",
+    "addressLocality": "Grenoble",
+    "postalCode": "38000",
+    "addressCountry": "FR"
+  },
+  "servesCuisine": [
+    "French",
+    "Contemporary French"
+  ],
+  "acceptsReservations": "https://www.thefork.fr/restaurant/une-semaine-sur-deux-r442641",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "12:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "19:00",
+      "closes": "21:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "12:00",
+      "closes": "14:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/1semainesur2restaurant/",
+    "https://www.facebook.com/1sur2grenoble/"
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
