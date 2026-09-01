@@ -542,6 +542,210 @@ const translations = {
 
 };
 
+let menuData = null;
+
+
+function createMenuElement(tag, className, text){
+
+  const element = document.createElement(tag);
+
+  if(className){
+    element.className = className;
+  }
+
+  if(text !== undefined && text !== null){
+    element.textContent = text;
+  }
+
+  return element;
+
+}
+
+
+function renderMenu(lang){
+
+  if(!menuData){
+    return;
+  }
+
+
+  const menuContainer =
+    document.getElementById("menuContainer");
+
+
+  menuContainer.innerHTML = "";
+
+
+  menuData.categories.forEach(category => {
+
+    const column =
+      createMenuElement("div", "menu-column");
+
+
+    const columnHead =
+      createMenuElement("div", "menu-column-head");
+
+
+    const categoryName =
+      createMenuElement(
+        "h3",
+        "",
+        category.name[lang]
+      );
+
+
+    const categoryPrice =
+      createMenuElement(
+        "span",
+        "menu-column-price",
+        category.price
+      );
+
+
+    columnHead.appendChild(categoryName);
+    columnHead.appendChild(categoryPrice);
+
+    column.appendChild(columnHead);
+
+
+    category.dishes.forEach(dish => {
+
+      const dishElement =
+        createMenuElement("div", "menu-dish");
+
+
+      const dishTop =
+        createMenuElement("div", "menu-dish-top");
+
+
+      const dishName =
+        createMenuElement(
+          "span",
+          "menu-dish-name",
+          dish.name[lang]
+        );
+
+
+      dishTop.appendChild(dishName);
+
+
+      if(dish.supplement){
+
+        const supplement =
+          createMenuElement(
+            "span",
+            "menu-supplement",
+            dish.supplement
+          );
+
+        dishTop.appendChild(supplement);
+
+      }
+
+
+      const description =
+        createMenuElement(
+          "span",
+          "menu-dish-description",
+          dish.description[lang]
+        );
+
+
+      dishElement.appendChild(dishTop);
+      dishElement.appendChild(description);
+
+      column.appendChild(dishElement);
+
+    });
+
+
+    menuContainer.appendChild(column);
+
+  });
+
+
+  const formula =
+    createMenuElement("div", "menu-formule");
+
+
+  const formulaLabel =
+    createMenuElement("div", "menu-formule-label");
+
+
+  const formulaSmall =
+    createMenuElement(
+      "small",
+      "",
+      menuData.formula.label[lang]
+    );
+
+
+  const formulaDescription =
+    createMenuElement(
+      "span",
+      "",
+      menuData.formula.description[lang]
+    );
+
+
+  const formulaPrice =
+    createMenuElement(
+      "div",
+      "menu-formule-price",
+      menuData.formula.price
+    );
+
+
+  formulaLabel.appendChild(formulaSmall);
+  formulaLabel.appendChild(formulaDescription);
+
+  formula.appendChild(formulaLabel);
+  formula.appendChild(formulaPrice);
+
+  menuContainer.appendChild(formula);
+
+}
+
+
+async function loadMenu(){
+
+  try{
+
+    const response =
+      await fetch("menu.json", {
+        cache: "no-store"
+      });
+
+
+    if(!response.ok){
+
+      throw new Error(
+        `Menu could not be loaded: ${response.status}`
+      );
+
+    }
+
+
+    menuData = await response.json();
+
+
+    const lang =
+      localStorage.getItem("siteLanguage") || "fr";
+
+
+    renderMenu(lang);
+
+  }
+  catch(error){
+
+    console.error(
+      "Unable to load menu:",
+      error
+    );
+
+  }
+
+}
 
 function applyLanguage(lang){
 
