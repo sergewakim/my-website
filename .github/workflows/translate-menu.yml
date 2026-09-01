@@ -1,0 +1,45 @@
+name: Translate restaurant menu
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "menu.json"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Translate menu with DeepL
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: node scripts/translate-menu.mjs
+
+      - name: Commit English translations
+        run: |
+          if git diff --quiet menu.json; then
+            echo "No translation changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add menu.json
+          git commit -m "Auto-translate menu to English"
+          git push
