@@ -10,33 +10,45 @@
       "dishes": [
         {
           "name": {
-            "fr": "Saumon Gravlax",
-            "en": "Gravlax Salmon"
+            "fr": "Notre velouté de saison",
+            "en": "Seasonal Velouté"
           },
           "description": {
-            "fr": "gravlax maison, agrumes",
-            "en": "house-cured gravlax, citrus"
+            "fr": "velouté de lentilles corail, espuma parmesan et coppa croustillante",
+            "en": "red lentil velouté, Parmesan espuma and crispy coppa"
           }
         },
         {
           "name": {
-            "fr": "Foie Gras Mi-Cuit",
-            "en": "Mi-Cuit Foie Gras"
+            "fr": "Notre foie gras",
+            "en": "Our Foie Gras"
           },
           "description": {
-            "fr": "chutney de coing, effiloché de bœuf",
-            "en": "quince chutney, pulled beef"
+            "fr": "foie gras mi-cuit au Porto, chutney d’oignons rouges et gelée au Porto",
+            "en": "Port mi-cuit foie gras, red onion chutney and Port jelly"
+          },
+          "supplement": "+5 €"
+        },
+        {
+          "name": {
+            "fr": "Le tartare de thon",
+            "en": "Tuna Tartare"
+          },
+          "description": {
+            "fr": "thon, grenade, betterave, oignons blancs et arachides",
+            "en": "tuna, pomegranate, beetroot, white onions and peanuts"
           }
         },
         {
           "name": {
-            "fr": "Gazpacho",
-            "en": "Gazpacho"
+            "fr": "L'œuf truffé du moment",
+            "en": "Seasonal Truffled Egg"
           },
           "description": {
-            "fr": "légumes de saison",
-            "en": "seasonal vegetables"
-          }
+            "fr": "crémeux de céleri, œuf poché et copeaux de truffe",
+            "en": "celeriac cream, poached egg and truffle shavings"
+          },
+          "supplement": "+3 €"
         }
       ]
     },
@@ -50,23 +62,53 @@
       "dishes": [
         {
           "name": {
-            "fr": "Poulpe Safrané",
-            "en": "Saffron Octopus"
+            "fr": "Notre plat signature",
+            "en": "Our Signature Dish"
           },
           "description": {
-            "fr": "poulpe grillé, safran, huile d'olive",
-            "en": "grilled octopus, saffron, olive oil"
+            "fr": "poulpe à la crème d’olives noires et risotto de riz noir",
+            "en": "octopus with black olive cream and black rice risotto"
+          }
+        },
+        {
+          "name": {
+            "fr": "Le suprême de pintade",
+            "en": "Guinea Fowl Supreme"
+          },
+          "description": {
+            "fr": "pintade fermière, crème de chorizo et croustillant de pommes de terre",
+            "en": "farm-raised guinea fowl, chorizo cream and crispy potatoes"
+          }
+        },
+        {
+          "name": {
+            "fr": "La souris d'agneau",
+            "en": "Lamb Shank"
+          },
+          "description": {
+            "fr": "agneau confit, jus corsé et croustillant de pommes de terre",
+            "en": "slow-cooked lamb, rich jus and crispy potatoes"
           },
           "supplement": "+5 €"
         },
         {
           "name": {
-            "fr": "Souris d'Agneau",
-            "en": "Lamb Shank"
+            "fr": "Le filet de daurade",
+            "en": "Sea Bream Fillet"
           },
           "description": {
-            "fr": "cuisson longue, jus corsé",
-            "en": "slow-cooked, rich jus"
+            "fr": "daurade royale, crème de cresson et risotto de riz noir",
+            "en": "sea bream, watercress cream and black rice risotto"
+          }
+        },
+        {
+          "name": {
+            "fr": "La végétarienne de saison",
+            "en": "Seasonal Vegetarian Dish"
+          },
+          "description": {
+            "fr": "tartelette de poireaux, oignons caramélisés, œuf poché et risotto de riz noir",
+            "en": "leek tartlet, caramelised onions, poached egg and black rice risotto"
           }
         }
       ]
@@ -81,32 +123,32 @@
       "dishes": [
         {
           "name": {
-            "fr": "Dessert Autour du Chocolat",
-            "en": "Chocolate Dessert"
+            "fr": "La fraîcheur du palet breton",
+            "en": "Breton Shortbread Freshness"
           },
           "description": {
-            "fr": "déclinaison maison",
-            "en": "house chocolate creation"
+            "fr": "palet breton, crème au citron vert et ananas flambé au rhum",
+            "en": "Breton shortbread, lime cream and rum-flambéed pineapple"
           }
         },
         {
           "name": {
-            "fr": "Crème Brûlée à la Chartreuse Jaune",
-            "en": "Crème Brûlée with Yellow Chartreuse"
+            "fr": "Crème brûlée du moment",
+            "en": "Seasonal Crème Brûlée"
           },
           "description": {
-            "fr": "clin d'œil aux Alpes",
-            "en": "a nod to the Alps"
+            "fr": "crème brûlée parfumée au Grand Marnier",
+            "en": "Grand Marnier crème brûlée"
           }
         },
         {
           "name": {
-            "fr": "La Pomme Bretonne",
-            "en": "Breton Apple"
+            "fr": "Le chocolat Valrhona et la noisette",
+            "en": "Valrhona Chocolate & Hazelnut"
           },
           "description": {
-            "fr": "pâtisserie maison",
-            "en": "house-made pastry"
+            "fr": "mousse Valrhona, ganache noisette et tuile cacao",
+            "en": "Valrhona chocolate mousse, hazelnut ganache and cocoa tuile"
           }
         }
       ]
