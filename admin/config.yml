@@ -19,22 +19,20 @@ collections:
             name: "categories"
             widget: "list"
             summary: "{{fields.name.fr}}"
-            fields:
-              - label: "Identifiant"
-                name: "id"
-                widget: "string"
 
+            fields:
               - label: "Nom de la catégorie"
                 name: "name"
                 widget: "object"
                 fields:
-                  - label: "Français"
+                  - label: "Nom"
                     name: "fr"
                     widget: "string"
 
-                  - label: "Anglais"
+                  - label: "English"
                     name: "en"
-                    widget: "string"
+                    widget: "hidden"
+                    default: ""
 
               - label: "Prix"
                 name: "price"
@@ -44,30 +42,33 @@ collections:
                 name: "dishes"
                 widget: "list"
                 summary: "{{fields.name.fr}}"
+
                 fields:
                   - label: "Nom du plat"
                     name: "name"
                     widget: "object"
                     fields:
-                      - label: "Français"
+                      - label: "Nom"
                         name: "fr"
                         widget: "string"
 
-                      - label: "Anglais"
+                      - label: "English"
                         name: "en"
-                        widget: "string"
+                        widget: "hidden"
+                        default: ""
 
                   - label: "Description"
                     name: "description"
                     widget: "object"
                     fields:
-                      - label: "Français"
+                      - label: "Description"
                         name: "fr"
-                        widget: "string"
+                        widget: "text"
 
-                      - label: "Anglais"
+                      - label: "English"
                         name: "en"
-                        widget: "string"
+                        widget: "hidden"
+                        default: ""
 
                   - label: "Supplément"
                     name: "supplement"
@@ -77,30 +78,33 @@ collections:
           - label: "Formule"
             name: "formula"
             widget: "object"
+
             fields:
               - label: "Titre"
                 name: "label"
                 widget: "object"
                 fields:
-                  - label: "Français"
+                  - label: "Titre"
                     name: "fr"
                     widget: "string"
 
-                  - label: "Anglais"
+                  - label: "English"
                     name: "en"
-                    widget: "string"
+                    widget: "hidden"
+                    default: ""
 
               - label: "Description"
                 name: "description"
                 widget: "object"
                 fields:
-                  - label: "Français"
+                  - label: "Description"
                     name: "fr"
                     widget: "string"
 
-                  - label: "Anglais"
+                  - label: "English"
                     name: "en"
-                    widget: "string"
+                    widget: "hidden"
+                    default: ""
 
               - label: "Prix"
                 name: "price"
