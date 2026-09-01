@@ -1,0 +1,107 @@
+backend:
+  name: github
+  repo: sergewakim/my-website
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - label: "Menu du restaurant"
+    name: "restaurant_menu"
+    files:
+      - label: "La Carte"
+        name: "menu"
+        file: "menu.json"
+
+        fields:
+          - label: "Catégories"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.name.fr}}"
+            fields:
+              - label: "Identifiant"
+                name: "id"
+                widget: "string"
+
+              - label: "Nom de la catégorie"
+                name: "name"
+                widget: "object"
+                fields:
+                  - label: "Français"
+                    name: "fr"
+                    widget: "string"
+
+                  - label: "Anglais"
+                    name: "en"
+                    widget: "string"
+
+              - label: "Prix"
+                name: "price"
+                widget: "string"
+
+              - label: "Plats"
+                name: "dishes"
+                widget: "list"
+                summary: "{{fields.name.fr}}"
+                fields:
+                  - label: "Nom du plat"
+                    name: "name"
+                    widget: "object"
+                    fields:
+                      - label: "Français"
+                        name: "fr"
+                        widget: "string"
+
+                      - label: "Anglais"
+                        name: "en"
+                        widget: "string"
+
+                  - label: "Description"
+                    name: "description"
+                    widget: "object"
+                    fields:
+                      - label: "Français"
+                        name: "fr"
+                        widget: "string"
+
+                      - label: "Anglais"
+                        name: "en"
+                        widget: "string"
+
+                  - label: "Supplément"
+                    name: "supplement"
+                    widget: "string"
+                    required: false
+
+          - label: "Formule"
+            name: "formula"
+            widget: "object"
+            fields:
+              - label: "Titre"
+                name: "label"
+                widget: "object"
+                fields:
+                  - label: "Français"
+                    name: "fr"
+                    widget: "string"
+
+                  - label: "Anglais"
+                    name: "en"
+                    widget: "string"
+
+              - label: "Description"
+                name: "description"
+                widget: "object"
+                fields:
+                  - label: "Français"
+                    name: "fr"
+                    widget: "string"
+
+                  - label: "Anglais"
+                    name: "en"
+                    widget: "string"
+
+              - label: "Prix"
+                name: "price"
+                widget: "string"
