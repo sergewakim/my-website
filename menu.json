@@ -1,0 +1,126 @@
+{
+  "categories": [
+    {
+      "id": "starters",
+      "name": {
+        "fr": "Entrées",
+        "en": "Starters"
+      },
+      "price": "10 €",
+      "dishes": [
+        {
+          "name": {
+            "fr": "Saumon Gravlax",
+            "en": "Gravlax Salmon"
+          },
+          "description": {
+            "fr": "gravlax maison, agrumes",
+            "en": "house-cured gravlax, citrus"
+          }
+        },
+        {
+          "name": {
+            "fr": "Foie Gras Mi-Cuit",
+            "en": "Mi-Cuit Foie Gras"
+          },
+          "description": {
+            "fr": "chutney de coing, effiloché de bœuf",
+            "en": "quince chutney, pulled beef"
+          }
+        },
+        {
+          "name": {
+            "fr": "Gazpacho",
+            "en": "Gazpacho"
+          },
+          "description": {
+            "fr": "légumes de saison",
+            "en": "seasonal vegetables"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mains",
+      "name": {
+        "fr": "Plats",
+        "en": "Main Courses"
+      },
+      "price": "22 €",
+      "dishes": [
+        {
+          "name": {
+            "fr": "Poulpe Safrané",
+            "en": "Saffron Octopus"
+          },
+          "description": {
+            "fr": "poulpe grillé, safran, huile d'olive",
+            "en": "grilled octopus, saffron, olive oil"
+          },
+          "supplement": "+5 €"
+        },
+        {
+          "name": {
+            "fr": "Souris d'Agneau",
+            "en": "Lamb Shank"
+          },
+          "description": {
+            "fr": "cuisson longue, jus corsé",
+            "en": "slow-cooked, rich jus"
+          }
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": {
+        "fr": "Desserts",
+        "en": "Desserts"
+      },
+      "price": "10 €",
+      "dishes": [
+        {
+          "name": {
+            "fr": "Dessert Autour du Chocolat",
+            "en": "Chocolate Dessert"
+          },
+          "description": {
+            "fr": "déclinaison maison",
+            "en": "house chocolate creation"
+          }
+        },
+        {
+          "name": {
+            "fr": "Crème Brûlée à la Chartreuse Jaune",
+            "en": "Crème Brûlée with Yellow Chartreuse"
+          },
+          "description": {
+            "fr": "clin d'œil aux Alpes",
+            "en": "a nod to the Alps"
+          }
+        },
+        {
+          "name": {
+            "fr": "La Pomme Bretonne",
+            "en": "Breton Apple"
+          },
+          "description": {
+            "fr": "pâtisserie maison",
+            "en": "house-made pastry"
+          }
+        }
+      ]
+    }
+  ],
+  "formula": {
+    "label": {
+      "fr": "Formule",
+      "en": "Set Menu"
+    },
+    "description": {
+      "fr": "Entrée · Plat · Dessert",
+      "en": "Starter · Main Course · Dessert"
+    },
+    "price": "39 €"
+  }
+}
