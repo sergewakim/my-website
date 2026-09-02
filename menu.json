@@ -21,11 +21,11 @@
         {
           "name": {
             "fr": "Notre foie gras TEST",
-            "en": "Our foie gras"
+            "en": "Our foie gras TEST"
           },
           "description": {
             "fr": "foie gras mi-cuit au Porto, chutney d’oignons rouges et gelée au Porto",
-            "en": "semi-cooked foie gras with port, red onion chutney and port jelly"
+            "en": "semi-cooked foie gras in Port, red onion chutney and Port jelly"
           },
           "supplement": "+5 €"
         },
@@ -73,7 +73,7 @@
         {
           "name": {
             "fr": "Le suprême de pintade",
-            "en": "Guinea fowl fillet"
+            "en": "Guinea fowl supreme"
           },
           "description": {
             "fr": "pintade fermière, crème de chorizo et croustillant de pommes de terre",
@@ -98,7 +98,7 @@
           },
           "description": {
             "fr": "daurade royale, crème de cresson et risotto de riz noir",
-            "en": "gilt-head bream, watercress purée and black rice risotto"
+            "en": "gilthead seabream, watercress cream and black rice risotto"
           }
         },
         {
