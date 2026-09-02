@@ -15,17 +15,17 @@
           },
           "description": {
             "fr": "velouté de lentilles corail, espuma parmesan et coppa croustillante",
-            "en": "Cream of coral lentil soup, Parmesan espuma and crispy coppa"
+            "en": "Cream of coral lentil soup, parmesan espuma and crispy coppa"
           }
         },
         {
           "name": {
             "fr": "Notre foie gras",
-            "en": "Our foie gras TEST"
+            "en": "Our foie gras"
           },
           "description": {
             "fr": "foie gras mi-cuit au Porto, chutney d’oignons rouges et gelée au Porto",
-            "en": "semi-cooked foie gras in Port, red onion chutney and Port jelly"
+            "en": "semi-cured foie gras in Port, red onion chutney and Port jelly"
           },
           "supplement": "+5 €"
         },
@@ -73,7 +73,7 @@
         {
           "name": {
             "fr": "Le suprême de pintade",
-            "en": "Guinea fowl supreme"
+            "en": "Guinea fowl fillet"
           },
           "description": {
             "fr": "pintade fermière, crème de chorizo et croustillant de pommes de terre",
@@ -98,7 +98,7 @@
           },
           "description": {
             "fr": "daurade royale, crème de cresson et risotto de riz noir",
-            "en": "gilthead seabream, watercress cream and black rice risotto"
+            "en": "gilthead seabream, watercress purée and black rice risotto"
           }
         },
         {
