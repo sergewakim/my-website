@@ -1,1 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
 
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <title>Page introuvable | Une Semaine sur Deux</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root{
+      --noir:#0e0a08;
+      --noir-soft:#18120d;
+      --cream:#f6efe3;
+      --cream-dim:#c7b298;
+      --gold:#d8aa67;
+      --gold-dim:#9f7c4d;
+      --line:rgba(216,170,103,0.18);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      min-height:100svh;
+
+      display:flex;
+      flex-direction:column;
+
+      background:
+        radial-gradient(
+          ellipse 800px 500px at 80% 15%,
+          rgba(93,58,36,0.30),
+          transparent 60%
+        ),
+        radial-gradient(
+          ellipse 600px 400px at 10% 90%,
+          rgba(93,58,36,0.18),
+          transparent 60%
+        ),
+        var(--noir);
+
+      color:var(--cream);
+
+      font-family:'Inter',sans-serif;
+
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    :focus-visible{
+      outline:2px solid var(--gold);
+      outline-offset:3px;
+    }
+
+    header{
+      border-bottom:1px solid var(--line);
+      background:rgba(22,14,13,0.82);
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-inner{
+      max-width:1120px;
+      margin:0 auto;
+      padding:16px 28px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+
+      font-family:'Fraunces',serif;
+      font-size:1.05rem;
+      line-height:1.05;
+
+      text-decoration:none;
+    }
+
+    .brand small{
+      margin-top:4px;
+
+      font-family:'Inter',sans-serif;
+      font-size:0.6rem;
+
+      color:var(--gold-dim);
+
+      letter-spacing:0.18em;
+    }
+
+    .lang-switcher-wrap{
+      position:relative;
+    }
+
+    .lang-switcher-wrap::after{
+      content:"▾";
+
+      position:absolute;
+      right:7px;
+      top:50%;
+
+      transform:translateY(-52%);
+
+      color:var(--cream-dim);
+      font-size:0.7rem;
+
+      pointer-events:none;
+    }
+
+    .lang-switcher{
+      width:48px;
+      padding:7px 15px 7px 8px;
+
+      appearance:none;
+      -webkit-appearance:none;
+
+      background:transparent;
+
+      border:1px solid var(--line);
+      border-radius:2px;
+
+      color:var(--cream-dim);
+
+      font-family:'Inter',sans-serif;
+      font-size:0.78rem;
+      font-weight:500;
+
+      cursor:pointer;
+    }
+
+    .lang-switcher:hover{
+      color:var(--gold);
+      border-color:var(--gold-dim);
+    }
+
+    .lang-switcher option{
+      background:var(--noir-soft);
+      color:var(--cream);
+    }
+
+    main{
+      flex:1;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:80px 28px;
+    }
+
+    .error-wrap{
+      width:100%;
+      max-width:760px;
+
+      text-align:center;
+    }
+
+    .error-code{
+      margin:0;
+
+      font-family:'Fraunces',serif;
+      font-size:clamp(6rem,20vw,12rem);
+      font-weight:400;
+      line-height:0.8;
+
+      color:var(--gold);
+
+      opacity:0.95;
+    }
+
+    .eyebrow{
+      margin-top:30px;
+
+      font-family:'Fraunces',serif;
+      font-style:italic;
+
+      color:var(--gold);
+
+      font-size:1rem;
+    }
+
+    h1{
+      margin:12px 0 0;
+
+      font-family:'Fraunces',serif;
+      font-weight:500;
+
+      font-size:clamp(2rem,5vw,3.3rem);
+      line-height:1.05;
+
+      color:var(--cream);
+    }
+
+    .message{
+      max-width:540px;
+
+      margin:22px auto 0;
+
+      color:var(--cream-dim);
+
+      font-size:1rem;
+      line-height:1.7;
+    }
+
+    .actions{
+      margin-top:38px;
+
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:14px 26px;
+
+      border-radius:2px;
+
+      text-decoration:none;
+
+      font-size:0.92rem;
+
+      transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+    }
+
+    .btn-solid{
+      background:var(--gold);
+      color:var(--noir);
+
+      border:1px solid var(--gold);
+
+      font-weight:600;
+    }
+
+    .btn-solid:hover{
+      background:#dcb271;
+      transform:translateY(-1px);
+    }
+
+    .btn-ghost{
+      border:1px solid var(--line);
+
+      color:var(--cream);
+    }
+
+    .btn-ghost:hover{
+      border-color:var(--gold);
+      color:var(--gold);
+    }
+
+    .decorative-line{
+      width:90px;
+      height:1px;
+
+      margin:42px auto 0;
+
+      background:var(--gold-dim);
+
+      opacity:0.65;
+    }
+
+    footer{
+      padding:24px 28px 32px;
+
+      text-align:center;
+
+      border-top:1px solid var(--line);
+
+      color:var(--gold-dim);
+
+      font-size:0.75rem;
+    }
+
+    @media (max-width:600px){
+      .nav-inner{
+        padding:13px 20px;
+      }
+
+      main{
+        padding:60px 20px;
+      }
+
+      .error-code{
+        font-size:7rem;
+      }
+
+      .actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-inner">
+
+    <a href="index.html" class="brand">
+      Une Semaine sur Deux
+      <small>RESTAURANT · GRENOBLE</small>
+    </a>
+
+    <div class="lang-switcher-wrap">
+
+      <select
+        id="languageSwitcher"
+        class="lang-switcher"
+        aria-label="Choisir la langue"
+      >
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+      </select>
+
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <div class="error-wrap">
+
+    <p class="error-code">404</p>
+
+    <div
+      class="eyebrow"
+      data-i18n="eyebrow"
+    >
+      Cette page n'est pas au menu.
+    </div>
+
+    <h1 data-i18n="title">
+      Page introuvable
+    </h1>
+
+    <p
+      class="message"
+      data-i18n="message"
+    >
+      La page que vous recherchez n'existe plus ou n'a jamais existé.
+      Revenez à l'accueil ou consultez la carte du restaurant.
+    </p>
+
+    <div class="actions">
+
+      <a
+        href="index.html"
+        class="btn btn-solid"
+        data-i18n="home"
+      >
+        Retour à l'accueil
+      </a>
+
+      <a
+        href="carte.html"
+        class="btn btn-ghost"
+        data-i18n="menu"
+      >
+        Voir la carte
+      </a>
+
+    </div>
+
+    <div
+      class="decorative-line"
+      aria-hidden="true"
+    ></div>
+
+  </div>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Une Semaine sur Deux · Grenoble
+</footer>
+
+<script>
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  const translations = {
+
+    fr: {
+      eyebrow: "Cette page n'est pas au menu.",
+      title: "Page introuvable",
+      message:
+        "La page que vous recherchez n'existe plus ou n'a jamais existé. Revenez à l'accueil ou consultez la carte du restaurant.",
+      home: "Retour à l'accueil",
+      menu: "Voir la carte"
+    },
+
+    en: {
+      eyebrow: "This page isn't on the menu.",
+      title: "Page not found",
+      message:
+        "The page you're looking for no longer exists or may never have existed. Return to the homepage or explore the restaurant menu.",
+      home: "Back to homepage",
+      menu: "View the menu"
+    }
+
+  };
+
+  const languageSwitcher =
+    document.getElementById("languageSwitcher");
+
+  function applyLanguage(lang){
+
+    document.documentElement.lang = lang;
+
+    document
+      .querySelectorAll("[data-i18n]")
+      .forEach(element => {
+
+        const key = element.dataset.i18n;
+
+        if(translations[lang][key]){
+          element.textContent =
+            translations[lang][key];
+        }
+
+      });
+
+    languageSwitcher.value = lang;
+
+    languageSwitcher.setAttribute(
+      "aria-label",
+      lang === "fr"
+        ? "Choisir la langue"
+        : "Choose language"
+    );
+
+    document.title =
+      lang === "fr"
+        ? "Page introuvable | Une Semaine sur Deux"
+        : "Page not found | Une Semaine sur Deux";
+
+    localStorage.setItem(
+      "siteLanguage",
+      lang
+    );
+  }
+
+  const savedLanguage =
+    localStorage.getItem("siteLanguage") || "fr";
+
+  applyLanguage(savedLanguage);
+
+  languageSwitcher.addEventListener(
+    "change",
+    event => {
+      applyLanguage(event.target.value);
+    }
+  );
+
+</script>
+
+</body>
+</html>
